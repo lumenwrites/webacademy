@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 
-# Create your views here.
+from django.views.generic import View
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView
+
+from .models import Post
+
+class BrowseView(ListView):
+    model = Post
+    context_object_name = 'posts'    
+    template_name = "posts/browse.html"
+

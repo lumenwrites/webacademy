@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import permalink
+from django.template.defaultfilters import slugify
 
 class Tag(models.Model):
     title = models.CharField(max_length=64)    

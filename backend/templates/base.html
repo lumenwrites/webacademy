@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+ 
+<head>
+  <meta charset="utf-8">
+  <title>Web Academy</title>
+  <meta name="description" content="Best web development tutorials and learning resources.">
+
+  
+  <link rel="stylesheet" href="{% static "/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "/css/font-awesome.min.css" %}">
+  <link rel="stylesheet" href="{% static "/css/style.css" %}">    
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="col-sm-8 col-md-8">
+      WA
+    </div>
+  </header>
+
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Browse</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+  <div class="container">
+  {% block content %}
+  
+  {% endblock %}
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

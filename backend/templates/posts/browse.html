@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">
+    <i class="fa fa-search" aria-hidden="true"></i>    
+    {% for post in posts %}
+    <article>
+      <h2>{{post.title}}</h2>
+      {{post.body}}
+    </article>
+    {% endfor %}
+
+  </div>
+</div>  
+{% endblock %}
