@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Post
+
+
+class PostAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('title',), }
+    search_fields = ['title','body']
+
+admin.site.register(Post, PostAdmin)
