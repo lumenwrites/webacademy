@@ -1,1 +1,80 @@
-@import url("/static/fonts/NotoSans-Regular.ttf");
+@import url("http://fonts.googleapis.com/css?family=Noto+Sans:100,200,400,700,400italic,700italic");
+/* line 8, ../sass/style.scss */
+html, body {
+  font-family: "Noto Sans", sans-serif;
+  background: #f9f9f9;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 14, ../sass/style.scss */
+h2 {
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* line 18, ../sass/style.scss */
+hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0 0 20px 0;
+}
+
+/* line 24, ../sass/style.scss */
+header {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+  padding: 10px;
+  border-top: 3px solid #da552f;
+}
+/* line 31, ../sass/style.scss */
+header .logo {
+  background: #da552f;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+  line-height: 0;
+  float: left;
+  margin-right: 10px;
+}
+/* line 44, ../sass/style.scss */
+header form {
+  float: left;
+  width: calc(100% - 50px);
+}
+/* line 48, ../sass/style.scss */
+header form input {
+  height: 40px;
+}
+/* line 52, ../sass/style.scss */
+header form .fa-search {
+  position: absolute;
+  right: 26px;
+  top: 12px;
+  color: #999;
+}
+
+/* line 64, ../sass/style.scss */
+article {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  margin-top: 20px;
+}
+/* line 71, ../sass/style.scss */
+article h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+/* line 77, ../sass/style.scss */
+article p {
+  font-size: 14px;
+  color: #999;
+}
+/* line 82, ../sass/style.scss */
+article .label {
+  color: #999;
+}

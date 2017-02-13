@@ -19,21 +19,31 @@
 <body>
 
   <header>
-    <div class="col-sm-8 col-md-8">
-      WA
+    <div class="container">
+      <div class="row">      
+	<div class="col-md-8">
+	  <!-- Logo -->
+	  <div class="logo">
+	    WA
+	  </div>
+
+	  <!-- Search -->
+	  <form>
+	    <input type="text" class="form-control" placeholder="Search">
+	    <i class="fa fa-search" aria-hidden="true"></i>    
+
+	  </form>
+	</div>
+	<!-- Menu -->
+	<div class="col-md-4">
+	  Browse
+	</div>
+      </div>
     </div>
   </header>
 
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Browse</a></li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
-
-  <div class="container">
+  <div  class="container">
   {% block content %}
-  
   {% endblock %}
   </div>
   <script src="js/scripts.js"></script>
