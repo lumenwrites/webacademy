@@ -103,3 +103,70 @@ class PostDetailView(DetailView):
     template_name = "posts/post-detail.html"
 
     
+
+
+
+class TagView(FilterMixin, ListView):
+    model = Post
+    context_object_name = 'posts'    
+    template_name = "posts/browse.html"
+
+    def get_queryset(self):
+        qs = super(TagView, self).get_queryset()
+
+        # Filter by tag
+        tag = Tag.objects.get(slug=self.kwargs['tag'])
+
+        # qs = [p for p in qs if (tag in p.tags.all())]
+
+        posts = []
+        for post in qs:
+            for h in post.tags.all():
+                if h.slug==tag.slug:
+                    posts.append(post)
+        qs = posts
+
+        return qs
+        
+    def get_context_data(self, **kwargs):
+        context = super(TagView, self).get_context_data(**kwargs)
+        tag = Tag.objects.get(slug=self.kwargs['tagslug'])
+        context['tagtitle'] = tag.title
+        context['tag'] = tag
+        return context    
+    
+
+
+# Voting
+def upvote(request):
+    post = get_object_or_404(Post, id=request.POST.get('post-id'))
+    post.score += 1
+    post.save()
+    post.author.karma += 1
+    post.author.save()
+    user = request.user
+    user.upvoted.add(post)
+    user.save()
+
+    # Notification
+    notification = Notification(from_user=request.user,
+                                to_user=post.author,
+                                post=post,
+                                notification_type="upvote")
+    notification.save()
+    post.author.new_notifications = True
+    post.author.save()
+    return HttpResponse()
+
+def unupvote(request):
+    post = get_object_or_404(Post, id=request.POST.get('post-id'))
+    post.score -= 1
+    post.save()
+    post.author.karma -= 1
+    post.author.save()
+    user = request.user
+    user.upvoted.remove(post)
+    user.save()
+    return HttpResponse()
+
+    

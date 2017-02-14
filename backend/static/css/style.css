@@ -1,51 +1,52 @@
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:100,200,400,700,400italic,700italic");
-/* line 10, ../sass/style.scss */
+/* Helpers */
+/* line 2, ../sass/_helpers.scss */
+.left {
+  float: left;
+}
+
+/* line 6, ../sass/_helpers.scss */
+.right {
+  float: right;
+}
+
+/* line 1, ../sass/_general.scss */
 html, body {
   font-family: "Noto Sans", sans-serif;
   background: #f9f9f9;
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 16, ../sass/style.scss */
+/* line 7, ../sass/_general.scss */
 h2 {
   font-family: "Noto Sans", sans-serif;
 }
 
-/* line 20, ../sass/style.scss */
+/* line 11, ../sass/_general.scss */
 a {
   color: rgba(0, 0, 0, 0.8);
 }
-/* line 22, ../sass/style.scss */
+/* line 13, ../sass/_general.scss */
 a:hover {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
 
-/* line 28, ../sass/style.scss */
+/* line 19, ../sass/_general.scss */
 hr {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   margin: 10px 0;
 }
 
-/* line 34, ../sass/style.scss */
+/* line 25, ../sass/_general.scss */
 textarea, textarea:focus, textarea:active {
   resize: none;
   box-shadow: none !important;
 }
 
-/* Helpers */
-/* line 40, ../sass/style.scss */
-.left {
-  float: left;
-}
-
-/* line 44, ../sass/style.scss */
-.right {
-  float: right;
-}
-
-/* line 48, ../sass/style.scss */
+/* Customize bootstrap */
+/* line 34, ../sass/_general.scss */
 .btn-default {
   border-radius: 2px;
   background: transparent;
@@ -53,14 +54,14 @@ textarea, textarea:focus, textarea:active {
   border: 1px solid #999;
 }
 
-/* line 56, ../sass/style.scss */
+/* line 2, ../sass/_header.scss */
 header {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   background: #fff;
   padding: 10px;
   border-top: 3px solid #da552f;
 }
-/* line 63, ../sass/style.scss */
+/* line 9, ../sass/_header.scss */
 header .logo {
   background: #da552f;
   width: 40px;
@@ -74,27 +75,27 @@ header .logo {
   margin-right: 10px;
   /* margin-left: -50px; */
 }
-/* line 77, ../sass/style.scss */
+/* line 23, ../sass/_header.scss */
 header form {
   float: left;
   width: calc(100% - 50px);
 }
-/* line 81, ../sass/style.scss */
+/* line 27, ../sass/_header.scss */
 header form input {
   height: 40px;
 }
-/* line 85, ../sass/style.scss */
+/* line 31, ../sass/_header.scss */
 header form .fa-search {
   position: absolute;
   right: 26px;
   top: 12px;
   color: #999;
 }
-/* line 92, ../sass/style.scss */
+/* line 38, ../sass/_header.scss */
 header form .typeahead.dropdown-menu {
   width: calc(100% - 80px);
 }
-/* line 97, ../sass/style.scss */
+/* line 43, ../sass/_header.scss */
 header .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -102,74 +103,33 @@ header .navbar-nav > li > a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-right: 5px;
 }
-/* line 105, ../sass/style.scss */
+/* line 51, ../sass/_header.scss */
 header .subnav {
   margin-top: 10px;
 }
-/* line 107, ../sass/style.scss */
+/* line 53, ../sass/_header.scss */
 header .subnav .filters {
   /* margin-left: 50px; */
 }
-/* line 110, ../sass/style.scss */
+/* line 56, ../sass/_header.scss */
 header .subnav .btn {
   border-radius: 0;
 }
-/* line 114, ../sass/style.scss */
+/* line 60, ../sass/_header.scss */
 header .subnav .dropdown {
   float: left;
   margin-right: 5px;
 }
-/* line 117, ../sass/style.scss */
+/* line 63, ../sass/_header.scss */
 header .subnav .dropdown li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-/* line 122, ../sass/style.scss */
+/* line 68, ../sass/_header.scss */
 header .subnav .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* line 132, ../sass/style.scss */
-.subscription-box {
-  margin-top: 20px;
-  display: none;
-}
-/* line 136, ../sass/style.scss */
-.subscription-box .panel {
-  margin-bottom: 0;
-}
-/* line 139, ../sass/style.scss */
-.subscription-box .cta {
-  padding: 10px;
-  float: left;
-  margin-right: 20px;
-  font-weight: bold;
-}
-/* line 146, ../sass/style.scss */
-.subscription-box .input-group {
-  width: 580px;
-  width: 470px;
-  float: right;
-  margin-right: 27px;
-}
-/* line 153, ../sass/style.scss */
-.subscription-box input {
-  height: 40px;
-}
-/* line 157, ../sass/style.scss */
-.subscription-box .btn {
-  background: #da552f;
-  color: white;
-  height: 40px;
-}
-/* line 163, ../sass/style.scss */
-.subscription-box .close {
-  position: relative;
-  top: 19px;
-  right: 15px;
-  font-size: 32px;
-}
-
-/* line 172, ../sass/style.scss */
+/* line 2, ../sass/_posts.scss */
 article {
   background: white;
   padding: 20px;
@@ -177,53 +137,53 @@ article {
   border: 1px solid rgba(0, 0, 0, 0.09);
   margin-top: 20px;
 }
-/* line 179, ../sass/style.scss */
+/* line 9, ../sass/_posts.scss */
 article h2 {
   margin-top: 0;
   font-size: 22px;
   font-weight: bold;
 }
-/* line 185, ../sass/style.scss */
+/* line 15, ../sass/_posts.scss */
 article p {
   font-size: 14px;
   color: #999;
 }
-/* line 191, ../sass/style.scss */
+/* line 21, ../sass/_posts.scss */
 article .voting-buttons {
   float: left;
   margin-right: 20px;
 }
-/* line 194, ../sass/style.scss */
+/* line 24, ../sass/_posts.scss */
 article .voting-buttons .btn {
   margin-bottom: 5px;
   width: 50px;
   padding: 5px 0;
 }
-/* line 199, ../sass/style.scss */
+/* line 29, ../sass/_posts.scss */
 article .voting-buttons .btn:hover {
   background: #e7e7e7;
 }
-/* line 204, ../sass/style.scss */
+/* line 34, ../sass/_posts.scss */
 article .label {
   color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 209, ../sass/style.scss */
+/* line 39, ../sass/_posts.scss */
 .tag-description {
   margin-top: 20px;
 }
-/* line 211, ../sass/style.scss */
+/* line 41, ../sass/_posts.scss */
 .tag-description .panel {
   padding: 20px;
   margin-bottom: 0;
 }
-/* line 215, ../sass/style.scss */
+/* line 45, ../sass/_posts.scss */
 .tag-description .panel h1 {
   font-weight: bold;
   font-size: 20px;
   margin-top: 0;
 }
-/* line 220, ../sass/style.scss */
+/* line 50, ../sass/_posts.scss */
 .tag-description .panel h2 {
   font-weight: normal;
   font-size: 18px;
@@ -231,49 +191,90 @@ article .label {
 }
 
 /* Post detail */
-/* line 231, ../sass/style.scss */
+/* line 61, ../sass/_posts.scss */
 .comment {
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04);
 }
-/* line 233, ../sass/style.scss */
+/* line 63, ../sass/_posts.scss */
 .comment .footer {
   float: right;
 }
-/* line 235, ../sass/style.scss */
+/* line 65, ../sass/_posts.scss */
 .comment .footer a {
   cursor: pointer;
 }
-/* line 238, ../sass/style.scss */
+/* line 68, ../sass/_posts.scss */
 .comment .footer .score {
   font-weight: bold;
 }
 
-/* line 245, ../sass/style.scss */
+/* line 75, ../sass/_posts.scss */
 .comment .comment {
   margin-right: -20.5px;
 }
 
+/* line 16, ../sass/style.scss */
+.subscription-box {
+  margin-top: 20px;
+  display: none;
+}
+/* line 20, ../sass/style.scss */
+.subscription-box .panel {
+  margin-bottom: 0;
+}
+/* line 23, ../sass/style.scss */
+.subscription-box .cta {
+  padding: 10px;
+  float: left;
+  margin-right: 20px;
+  font-weight: bold;
+}
+/* line 30, ../sass/style.scss */
+.subscription-box .input-group {
+  width: 580px;
+  width: 470px;
+  float: right;
+  margin-right: 27px;
+}
+/* line 37, ../sass/style.scss */
+.subscription-box input {
+  height: 40px;
+}
+/* line 41, ../sass/style.scss */
+.subscription-box .btn {
+  background: #da552f;
+  color: white;
+  height: 40px;
+}
+/* line 47, ../sass/style.scss */
+.subscription-box .close {
+  position: relative;
+  top: 19px;
+  right: 15px;
+  font-size: 32px;
+}
+
 /* Modals */
 /* Pagination */
-/* line 254, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 .pagination {
   width: 100%;
   margin: 10px 0;
   padding: 5px;
   text-align: center;
 }
-/* line 260, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 .pagination .fa {
   margin-top: 6px;
   color: #999;
 }
 
 /* Footer */
-/* line 268, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 footer {
   color: #999;
 }
-/* line 270, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 footer a {
   color: #999;
   font-weight: bold;
