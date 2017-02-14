@@ -4,6 +4,8 @@ $background: #f9f9f9;
 $orange: #da552f;
 $black: rgba(0, 0, 0, 0.8);
 $gray: #999;
+$dark-gray: rgba(0,0,0,.6);
+$light-gray: #e7e7e7;
 
 html, body {
     font-family: "Noto Sans", sans-serif;
@@ -15,11 +17,32 @@ h2 {
     font-family: "Noto Sans", sans-serif;
 }
 
+a {
+    color: $black;
+    &:hover {
+	color: $black;	
+    }    
+}
+
 hr {
     border:none;
     border-top: 1px solid rgba(0,0,0,.15);
-    margin: 0 0 20px 0;
+    margin: 10px 0;
 }
+
+
+/* Helpers */
+.right {
+    float: right;
+}
+
+.btn {
+    border-radius: 2px;
+    background: transparent;
+    color: $dark-gray;
+    border: 1px solid $gray;
+}
+
 
 header {
     box-shadow: 0 1px 0 0 rgba(0,0,0,.05), 0 2px 4px 0 rgba(0,0,0,.06);
@@ -57,7 +80,38 @@ header {
 	}
     }
 
+    .navbar-nav>li>a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 40px;
+	border: 1px solid rgba(0,0,0,0.1);
+	margin-right:5px;
+    }
+
+    .subnav {
+	margin-top: 10px;
+
+	.btn {
+	    border-radius: 0;
+	}
+
+	.dropdown {
+	    float: left;
+	    margin-right: 5px;
+	    li {
+		border-bottom: 1px solid rgba(0,0,0,.15);
+	    }
+	}
+
+	.dropdown:hover .dropdown-menu {
+	    display: block;
+	}
+
+    }
 }
+
+
+
 
 
 
@@ -79,7 +133,21 @@ article {
 	color: $gray;
     }
 
+
+    .voting-buttons {
+	float: left;
+	margin-right: 20px;
+	.btn {
+	    margin-bottom: 5px;
+	    width: 50px;
+	    padding: 5px 0;
+
+	    &:hover {
+		background: $light-gray;
+	    }
+	}
+    }
     .label {
-	color: $gray;	
+	color: $dark-gray;
     }
 }

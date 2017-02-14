@@ -8,17 +8,38 @@
 
     {% for post in posts %}
     <article>
+      <div class="voting-buttons">
+	<a class="btn btn-default vote" href="">
+	  <i class="fa fa-chevron-up"></i>
+	  <div>
+	    426
+	  </div>
+	</a>
+	<br/>
+	<a class="btn btn-default comment" href="">      
+	  <i class="fi-comment"></i>
+	  12
+	</a>
+      </div>
+
       <h2>{{post.title}}</h2>
       <!-- <hr/> -->
       <p>
 	{{post.body}}
       </p>
+      <span class="label label-default">Webdev</span>
+      <span class="label label-default">Backend</span>            
       <span class="label label-default">Django</span>
       <span class="label label-default">Video</span>
       <span class="label label-default">Beginner</span>      
       <span class="label label-default">Paid</span>            
-      
-      
+
+      <!-- 
+      <a class="btn btn-default" href="">      
+	<i class="fi-comment"></i>
+	12
+      </a>
+      -->
     </article>
     {% endfor %}
 

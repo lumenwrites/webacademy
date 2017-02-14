@@ -1,31 +1,54 @@
 @import url("http://fonts.googleapis.com/css?family=Noto+Sans:100,200,400,700,400italic,700italic");
-/* line 8, ../sass/style.scss */
+/* line 10, ../sass/style.scss */
 html, body {
   font-family: "Noto Sans", sans-serif;
   background: #f9f9f9;
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 14, ../sass/style.scss */
+/* line 16, ../sass/style.scss */
 h2 {
   font-family: "Noto Sans", sans-serif;
 }
 
-/* line 18, ../sass/style.scss */
+/* line 20, ../sass/style.scss */
+a {
+  color: rgba(0, 0, 0, 0.8);
+}
+/* line 22, ../sass/style.scss */
+a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 27, ../sass/style.scss */
 hr {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
-  margin: 0 0 20px 0;
+  margin: 10px 0;
 }
 
-/* line 24, ../sass/style.scss */
+/* Helpers */
+/* line 35, ../sass/style.scss */
+.right {
+  float: right;
+}
+
+/* line 39, ../sass/style.scss */
+.btn {
+  border-radius: 2px;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #999;
+}
+
+/* line 47, ../sass/style.scss */
 header {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   background: #fff;
   padding: 10px;
   border-top: 3px solid #da552f;
 }
-/* line 31, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
 header .logo {
   background: #da552f;
   width: 40px;
@@ -38,24 +61,53 @@ header .logo {
   float: left;
   margin-right: 10px;
 }
-/* line 44, ../sass/style.scss */
+/* line 67, ../sass/style.scss */
 header form {
   float: left;
   width: calc(100% - 50px);
 }
-/* line 48, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 header form input {
   height: 40px;
 }
-/* line 52, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 header form .fa-search {
   position: absolute;
   right: 26px;
   top: 12px;
   color: #999;
 }
+/* line 83, ../sass/style.scss */
+header .navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 5px;
+}
+/* line 91, ../sass/style.scss */
+header .subnav {
+  margin-top: 10px;
+}
+/* line 94, ../sass/style.scss */
+header .subnav .btn {
+  border-radius: 0;
+}
+/* line 98, ../sass/style.scss */
+header .subnav .dropdown {
+  float: left;
+  margin-right: 5px;
+}
+/* line 101, ../sass/style.scss */
+header .subnav .dropdown li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+/* line 106, ../sass/style.scss */
+header .subnav .dropdown:hover .dropdown-menu {
+  display: block;
+}
 
-/* line 64, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 article {
   background: white;
   padding: 20px;
@@ -63,18 +115,33 @@ article {
   border: 1px solid rgba(0, 0, 0, 0.09);
   margin-top: 20px;
 }
-/* line 71, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 article h2 {
   margin-top: 0;
   font-size: 22px;
   font-weight: bold;
 }
-/* line 77, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 article p {
   font-size: 14px;
   color: #999;
 }
-/* line 82, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
+article .voting-buttons {
+  float: left;
+  margin-right: 20px;
+}
+/* line 140, ../sass/style.scss */
+article .voting-buttons .btn {
+  margin-bottom: 5px;
+  width: 50px;
+  padding: 5px 0;
+}
+/* line 145, ../sass/style.scss */
+article .voting-buttons .btn:hover {
+  background: #e7e7e7;
+}
+/* line 150, ../sass/style.scss */
 article .label {
-  color: #999;
+  color: rgba(0, 0, 0, 0.6);
 }
