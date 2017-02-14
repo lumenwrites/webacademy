@@ -22,4 +22,4 @@ class BrowseView(ListView):
 class PostDetailView(DetailView):
     model = Post
     context_object_name = 'post'    
-    template_name = "posts/post_detail.html"
+    template_name = "posts/post-detail.html"
