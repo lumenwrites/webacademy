@@ -243,3 +243,23 @@ article {
 
 
 /* Modals */
+
+
+/* Pagination */
+.pagination {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+    text-align: center;
+
+    .fa {
+	margin-top: 6px;
+	color: $gray;
+    }
+}
+
+/* Footer */
+
+footer a {
+    font-weight: bold;
+}

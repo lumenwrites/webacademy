@@ -249,3 +249,22 @@ article .label {
 }
 
 /* Modals */
+/* Pagination */
+/* line 249, ../sass/style.scss */
+.pagination {
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px;
+  text-align: center;
+}
+/* line 255, ../sass/style.scss */
+.pagination .fa {
+  margin-top: 6px;
+  color: #999;
+}
+
+/* Footer */
+/* line 263, ../sass/style.scss */
+footer a {
+  font-weight: bold;
+}
