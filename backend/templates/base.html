@@ -30,8 +30,10 @@
 
 	  <!-- Search -->
 	  <form>
-	    <input type="text" class="form-control"
-		   placeholder="What do you want to learn? ">
+	    <input type="text" class="form-control" id="searchbar"
+		   placeholder="What do you want to learn?"
+		   data-provide="typeahead"
+		   autocomplete="off">
 	    <i class="fa fa-search" aria-hidden="true"></i>    
 
 	  </form>
@@ -39,7 +41,6 @@
 	<!-- Menu -->
 	<div class="col-md-4">
 	  <ul class="nav navbar-nav right">
-            <li><a href="#">Browse</a></li>
             <li>
 	      <a href="#">
 		Submit
@@ -85,14 +86,41 @@
     </div> <!-- End .container -->
 
   </header>
-
+  
   <div  class="container">
+
+    <div class="row subscription-box">
+      <div class="col-md-12">
+	<div class="panel panel-default" id="subscription-box">
+	      <button type="button" class="close" 
+		      data-target="#subscription-box" 
+		      data-dismiss="alert">
+		<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+	      </button>
+
+	  <div class="panel-body">
+	      <div class="cta">
+		Receive the best web development learning resources in our weekly digest!
+	      </div>
+
+	      <div class="input-group">
+		<input type="text" class="form-control" placeholder="email">
+		<span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Subscribe</button>
+		</span>
+	    </div>
+	  </div>   <!-- End .col-md-12 -->
+	</div>
+      </div>
+    </div>
+
   {% block content %}
   {% endblock %}
   </div>
 
   <script src="{% static "/js/jquery.min.js" %}"></script>
-  <!-- <script src="{% static "/js/bootstrap.min.js" %}"></script>   -->
+  <script src="{% static "/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "/js/bootstrap-typeahead.min.js" %}"></script>  
   <script src="{% static "/js/scripts.js" %}"></script>
 </body>
 </html>

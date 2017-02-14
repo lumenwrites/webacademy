@@ -32,6 +32,10 @@ hr {
 
 
 /* Helpers */
+.left {
+    float: left;
+}
+
 .right {
     float: right;
 }
@@ -78,6 +82,10 @@ header {
 	    top: 12px;
 	    color: $gray;
 	}
+
+	.typeahead.dropdown-menu {
+	    width: calc(100% - 80px);
+	}
     }
 
     .navbar-nav>li>a {
@@ -113,6 +121,38 @@ header {
 
 
 
+.subscription-box {
+    margin-top: 20px;
+    .panel {
+	margin-bottom: 0;
+    }
+    .cta {
+	padding:10px;
+	float:left;
+	margin-right:20px;
+    }
+
+    .input-group {
+	width: 300px;
+    }
+
+    input {
+	height: 40px;
+    }
+    
+    .btn {
+	background: $orange;
+	color: white;
+	height: 40px;
+    }
+
+    .close {
+	position: relative;
+	top: 19px;
+	right: 15px;
+	font-size: 32px;
+    }
+}
 
 
 article {
