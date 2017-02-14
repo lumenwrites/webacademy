@@ -57,7 +57,7 @@
 
     <!-- Subnav -->
     <div class="row subnav">      
-      <div class="col-md-8">
+      <div class="col-md-8 filters">
 	<div class="dropdown">
 	  <a class="btn btn-default" data-toggle="dropdown" href="">
 	    Category: All
@@ -66,10 +66,14 @@
             <li><a href="#">Backend</a></li>
             <li><a href="#">Frontend</a></li>
             <li><a href="#">Devops</a></li>
-            <li><a href="#">Design</a></li>	    
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Business</a></li>	    	    
             <li><a href="#">Tools</a></li>
           </ul>	
 	</div>
+	<a class="btn btn-default" href="">
+	  Hot
+	</a>
 	<a class="btn btn-default" href="">
 	  Format: All
 	</a>
@@ -89,9 +93,9 @@
   
   <div  class="container">
 
-    <div class="row subscription-box">
+    <div class="row subscription-box"  id="subscription-box">
       <div class="col-md-12">
-	<div class="panel panel-default" id="subscription-box">
+	<div class="panel panel-default">
 	      <button type="button" class="close" 
 		      data-target="#subscription-box" 
 		      data-dismiss="alert">
@@ -100,13 +104,14 @@
 
 	  <div class="panel-body">
 	      <div class="cta">
-		Receive the best web development learning resources in our weekly digest!
+		<!-- Receive the best web development learning resources in our weekly digest! -->
+		Discover the best learning resources for hackers and founders!
 	      </div>
 
 	      <div class="input-group">
 		<input type="text" class="form-control" placeholder="email">
 		<span class="input-group-btn">
-                  <button class="btn btn-default" type="button">Subscribe</button>
+                  <button class="btn btn-default" type="button">Receive weekly email digest!</button>
 		</span>
 	    </div>
 	  </div>   <!-- End .col-md-12 -->

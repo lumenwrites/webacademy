@@ -98,53 +98,57 @@ header .navbar-nav > li > a {
 header .subnav {
   margin-top: 10px;
 }
-/* line 102, ../sass/style.scss */
+/* line 101, ../sass/style.scss */
+header .subnav .filters {
+  margin-left: 50px;
+}
+/* line 104, ../sass/style.scss */
 header .subnav .btn {
   border-radius: 0;
 }
-/* line 106, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 header .subnav .dropdown {
   float: left;
   margin-right: 5px;
 }
-/* line 109, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 header .subnav .dropdown li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-/* line 114, ../sass/style.scss */
+/* line 116, ../sass/style.scss */
 header .subnav .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* line 124, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 .subscription-box {
   margin-top: 20px;
 }
-/* line 126, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 .subscription-box .panel {
   margin-bottom: 0;
 }
-/* line 129, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 .subscription-box .cta {
   padding: 10px;
   float: left;
   margin-right: 20px;
 }
-/* line 135, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .subscription-box .input-group {
-  width: 300px;
+  width: 580px;
 }
-/* line 139, ../sass/style.scss */
+/* line 141, ../sass/style.scss */
 .subscription-box input {
   height: 40px;
 }
-/* line 143, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 .subscription-box .btn {
   background: #da552f;
   color: white;
   height: 40px;
 }
-/* line 149, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 .subscription-box .close {
   position: relative;
   top: 19px;
@@ -152,7 +156,7 @@ header .subnav .dropdown:hover .dropdown-menu {
   font-size: 32px;
 }
 
-/* line 158, ../sass/style.scss */
+/* line 160, ../sass/style.scss */
 article {
   background: white;
   padding: 20px;
@@ -160,33 +164,33 @@ article {
   border: 1px solid rgba(0, 0, 0, 0.09);
   margin-top: 20px;
 }
-/* line 165, ../sass/style.scss */
+/* line 167, ../sass/style.scss */
 article h2 {
   margin-top: 0;
   font-size: 22px;
   font-weight: bold;
 }
-/* line 171, ../sass/style.scss */
+/* line 173, ../sass/style.scss */
 article p {
   font-size: 14px;
   color: #999;
 }
-/* line 177, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 article .voting-buttons {
   float: left;
   margin-right: 20px;
 }
-/* line 180, ../sass/style.scss */
+/* line 182, ../sass/style.scss */
 article .voting-buttons .btn {
   margin-bottom: 5px;
   width: 50px;
   padding: 5px 0;
 }
-/* line 185, ../sass/style.scss */
+/* line 187, ../sass/style.scss */
 article .voting-buttons .btn:hover {
   background: #e7e7e7;
 }
-/* line 190, ../sass/style.scss */
+/* line 192, ../sass/style.scss */
 article .label {
   color: rgba(0, 0, 0, 0.6);
 }

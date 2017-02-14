@@ -98,7 +98,9 @@ header {
 
     .subnav {
 	margin-top: 10px;
-
+	.filters {
+	    margin-left: 50px;
+	}
 	.btn {
 	    border-radius: 0;
 	}
@@ -133,7 +135,7 @@ header {
     }
 
     .input-group {
-	width: 300px;
+	width: 580px;
     }
 
     input {
