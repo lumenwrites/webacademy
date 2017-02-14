@@ -25,6 +25,7 @@
 
   <!-- Main Page -->
   <div  class="container">
+
   {% include "elements/subscription-box.html" %}
   {# {% include "elements/tag-description.html" %}  #}
 

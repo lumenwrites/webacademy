@@ -8,6 +8,7 @@ from django.db.models import Q, Count
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Post
+from .forms import PostForm
 from tags.models import Tag
 
 
@@ -83,6 +84,8 @@ class FilterMixin(object):
 
         context['urlstring'] = urlstring
 
+        context['submitform'] = PostForm()
+        
         return context
     
 
