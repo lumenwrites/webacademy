@@ -12,3 +12,14 @@ class BrowseView(ListView):
     context_object_name = 'posts'    
     template_name = "posts/browse.html"
 
+
+class BrowseView(ListView):
+    model = Post
+    context_object_name = 'posts'    
+    template_name = "posts/browse.html"
+    
+
+class PostDetailView(DetailView):
+    model = Post
+    context_object_name = 'post'    
+    template_name = "posts/post_detail.html"

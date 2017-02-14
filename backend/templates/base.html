@@ -92,12 +92,11 @@
   </header>
   
   <div  class="container">
-
     <div class="row subscription-box"  id="subscription-box">
       <div class="col-md-12 col-sm-12">
 	<div class="panel panel-default">
-	      <button type="button" class="close" 
-		      data-target="#subscription-box" 
+	      <button type="button" class="close" id="close-subscription-box"
+		      data-target="#subscription-box"
 		      data-dismiss="alert">
 		<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 	      </button>
@@ -113,17 +112,29 @@
 		<span class="input-group-btn">
                   <button class="btn btn-default" type="button">Receive weekly email digest!</button>
 		</span>
-	    </div>
-	  </div>   <!-- End .col-md-12 col-sm-12 -->
-	</div>
-      </div>
-    </div>
+	      </div>
+	  </div> <!-- End .col-md-12 col-sm-12 -->
+	</div> <!-- End .panel -->
+      </div> <!-- End .col-md-12 -->
+    </div> <!-- End .subscription-box -->
 
+
+    <div class="row tag-description">
+      <div class="col-md-12 col-sm-12">
+	<div class="panel panel-default">
+	  <h1> Best Django Tutorials and Courses </h1>
+	  <h2>Learn Django from the best Django tutorials submitted and voted by the programming community.</h2>
+	</div> <!-- End .panel -->
+      </div> <!-- End .col-md-12 col-sm-12 -->
+    </div> <!-- End .row -->
+
+    
   {% block content %}
   {% endblock %}
-  </div>
+  </div> <!-- End .container -->
 
   <script src="{% static "/js/jquery.min.js" %}"></script>
+  <script src="{% static "/js/js.cookie.js" %}"></script>  
   <script src="{% static "/js/bootstrap.min.js" %}"></script>
   <script src="{% static "/js/bootstrap-typeahead.min.js" %}"></script>  
   <script src="{% static "/js/scripts.js" %}"></script>

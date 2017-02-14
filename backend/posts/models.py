@@ -15,6 +15,13 @@ class Post(models.Model):
     tags = models.ManyToManyField('tags.Tag', related_name="posts", blank=True)
     score = models.IntegerField(default=0)
 
+
+    TYPES = (
+        ("article", "Article"),
+        ("book", "Book"),        
+        ("video", "Video"),
+        # ("course", "Course"),        
+    )    
     LEVELS = (
         ("all", "All"),
         ("beginner", "Beginner"),
@@ -25,15 +32,10 @@ class Post(models.Model):
         ("free", "Free"),
         ("paid", "Paid"),
     )    
-    TYPES = (
-        ("article", "Article"),
-        ("book", "Book"),        
-        ("video", "Video"),
-        # ("course", "Course"),        
-    )    
 
+    post_type = models.CharField(default="video", max_length=64, choices=TYPES, blank=True)    
     post_level = models.CharField(default="all", max_length=64, choices=LEVELS, blank=True)
-    
+    post_price = models.CharField(default="free", max_length=64, choices=PRICES, blank=True)    
 
 
 
@@ -42,7 +44,7 @@ class Post(models.Model):
 
     @permalink
     def get_absolute_url(self):
-        return ('view_post', None, {'slug': self.slug })
+        return ('post-detail', None, {'slug': self.slug })
 
 
 
