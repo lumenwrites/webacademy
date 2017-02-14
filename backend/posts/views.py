@@ -98,3 +98,5 @@ class PostDetailView(DetailView):
     model = Post
     context_object_name = 'post'    
     template_name = "posts/post-detail.html"
+
+    
