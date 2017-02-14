@@ -5,132 +5,32 @@
 <head>
   <meta charset="utf-8">
   <title>Web Academy</title>
-  <meta name="description" content="Best web development tutorials and learning resources.">
 
-  
+  <!-- Meta -->
+  <meta name="description" content="Best web development tutorials and learning resources.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="{% static "/css/bootstrap.min.css" %}">
   <link rel="stylesheet" href="{% static "/css/font-awesome.min.css" %}">
   <link rel="stylesheet" href="{% static "/css/foundation-icons.css" %}">
   <link rel="stylesheet" href="{% static "/css/style.css" %}">    
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
 </head>
 
 <body>
 
-  <header>
-    <div class="container">
-      <div class="row">      
-	<div class="col-md-8 col-sm-8">
-	  <!-- Logo -->
-	  <div class="logo">
-	    WA
-	  </div>
+  <!-- Header -->
+  {% include "elements/header.html" %}
 
-	  <!-- Search -->
-	  <form>
-	    <input type="text" class="form-control" id="searchbar"
-		   placeholder="What do you want to learn?"
-		   data-provide="typeahead"
-		   autocomplete="off">
-	    <i class="fa fa-search" aria-hidden="true"></i>    
-
-	  </form>
-	</div>
-	<!-- Menu -->
-	<div class="col-md-4 col-sm-4">
-	  <ul class="nav navbar-nav right">
-            <li>
-	      <a href="#">
-		Submit
-	      </a>
-	    </li>	    
-            <li>
-	      <a href="#">
-		Login
-	      </a>
-	    </li>	    
-	  </ul>	  
-	</div>
-      </div>
-
-    <!-- Subnav -->
-    <div class="row subnav">      
-      <div class="col-md-8 col-sm-8 filters">
-	<div class="dropdown">
-	  <a class="btn btn-default" data-toggle="dropdown" href="">
-	    Category: All
-	  </a>
-	  <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Backend</a></li>
-            <li><a href="#">Frontend</a></li>
-            <li><a href="#">Devops</a></li>
-            <li><a href="#">Design</a></li>
-            <li><a href="#">Business</a></li>	    	    
-            <li><a href="#">Tools</a></li>
-          </ul>	
-	</div>
-	<a class="btn btn-default" href="">
-	  Hot
-	</a>
-	<a class="btn btn-default" href="">
-	  Format: All
-	</a>
-	<a class="btn btn-default" href="">
-	  Level: All
-	</a>
-	<a class="btn btn-default" href="">
-	  Price: All
-	</a>
-	
-	</div>
-    </div>
-      
-    </div> <!-- End .container -->
-
-  </header>
-  
+  <!-- Main Page -->
   <div  class="container">
-    <div class="row subscription-box"  id="subscription-box">
-      <div class="col-md-12 col-sm-12">
-	<div class="panel panel-default">
-	      <button type="button" class="close" id="close-subscription-box"
-		      data-target="#subscription-box"
-		      data-dismiss="alert">
-		<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-	      </button>
+  {% include "elements/subscription-box.html" %}
+  {# {% include "elements/tag-description.html" %}  #}
 
-	  <div class="panel-body">
-	      <div class="cta">
-		<!-- Receive the best web development learning resources in our weekly digest! -->
-		Discover the best learning resources for hackers and founders!
-	      </div>
-
-	      <div class="input-group">
-		<input type="text" class="form-control" placeholder="email">
-		<span class="input-group-btn">
-                  <button class="btn btn-default" type="button">Receive weekly email digest!</button>
-		</span>
-	      </div>
-	  </div> <!-- End .col-md-12 col-sm-12 -->
-	</div> <!-- End .panel -->
-      </div> <!-- End .col-md-12 -->
-    </div> <!-- End .subscription-box -->
-
-
-    <div class="row tag-description">
-      <div class="col-md-12 col-sm-12">
-	<div class="panel panel-default">
-	  <h1> Best Django Tutorials and Courses </h1>
-	  <h2>Learn Django from the best Django tutorials submitted and voted by the programming community.</h2>
-	</div> <!-- End .panel -->
-      </div> <!-- End .col-md-12 col-sm-12 -->
-    </div> <!-- End .row -->
-
-    
+  <!-- Content -->
   {% block content %}
   {% endblock %}
+
   </div> <!-- End .container -->
 
   <script src="{% static "/js/jquery.min.js" %}"></script>
@@ -138,5 +38,6 @@
   <script src="{% static "/js/bootstrap.min.js" %}"></script>
   <script src="{% static "/js/bootstrap-typeahead.min.js" %}"></script>  
   <script src="{% static "/js/scripts.js" %}"></script>
+
 </body>
 </html>
