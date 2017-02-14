@@ -71,6 +71,7 @@ header {
 	line-height: 0;
 	float:left;
 	margin-right:10px;
+	/* margin-left: -50px; */
     }
     
     form {
@@ -104,7 +105,7 @@ header {
     .subnav {
 	margin-top: 10px;
 	.filters {
-	    margin-left: 50px;
+	    /* margin-left: 50px; */
 	}
 	.btn {
 	    border-radius: 0;
@@ -139,10 +140,14 @@ header {
 	padding:10px;
 	float:left;
 	margin-right:20px;
+	font-weight: bold;	
     }
 
     .input-group {
 	width: 580px;
+	width: 470px;
+	float: right;
+	margin-right: 27px;	
     }
 
     input {
@@ -238,7 +243,7 @@ article {
 }
 
 .comment .comment{
-    margin-right: -20px;
+    margin-right: -20.5px;
 }
 
 
@@ -260,6 +265,10 @@ article {
 
 /* Footer */
 
-footer a {
-    font-weight: bold;
+footer {
+    color: $gray;
+    a {
+	color: $gray;
+	font-weight: bold;
+    }
 }

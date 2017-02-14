@@ -72,28 +72,29 @@ header .logo {
   line-height: 0;
   float: left;
   margin-right: 10px;
+  /* margin-left: -50px; */
 }
-/* line 76, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 header form {
   float: left;
   width: calc(100% - 50px);
 }
-/* line 80, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 header form input {
   height: 40px;
 }
-/* line 84, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 header form .fa-search {
   position: absolute;
   right: 26px;
   top: 12px;
   color: #999;
 }
-/* line 91, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
 header form .typeahead.dropdown-menu {
   width: calc(100% - 80px);
 }
-/* line 96, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 header .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -101,62 +102,66 @@ header .navbar-nav > li > a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-right: 5px;
 }
-/* line 104, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
 header .subnav {
   margin-top: 10px;
 }
-/* line 106, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 header .subnav .filters {
-  margin-left: 50px;
+  /* margin-left: 50px; */
 }
-/* line 109, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 header .subnav .btn {
   border-radius: 0;
 }
-/* line 113, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 header .subnav .dropdown {
   float: left;
   margin-right: 5px;
 }
-/* line 116, ../sass/style.scss */
+/* line 117, ../sass/style.scss */
 header .subnav .dropdown li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-/* line 121, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 header .subnav .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* line 131, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 .subscription-box {
   margin-top: 20px;
   display: none;
 }
-/* line 135, ../sass/style.scss */
+/* line 136, ../sass/style.scss */
 .subscription-box .panel {
   margin-bottom: 0;
 }
-/* line 138, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .subscription-box .cta {
   padding: 10px;
   float: left;
   margin-right: 20px;
+  font-weight: bold;
 }
-/* line 144, ../sass/style.scss */
+/* line 146, ../sass/style.scss */
 .subscription-box .input-group {
   width: 580px;
+  width: 470px;
+  float: right;
+  margin-right: 27px;
 }
-/* line 148, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 .subscription-box input {
   height: 40px;
 }
-/* line 152, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 .subscription-box .btn {
   background: #da552f;
   color: white;
   height: 40px;
 }
-/* line 158, ../sass/style.scss */
+/* line 163, ../sass/style.scss */
 .subscription-box .close {
   position: relative;
   top: 19px;
@@ -164,7 +169,7 @@ header .subnav .dropdown:hover .dropdown-menu {
   font-size: 32px;
 }
 
-/* line 167, ../sass/style.scss */
+/* line 172, ../sass/style.scss */
 article {
   background: white;
   padding: 20px;
@@ -172,53 +177,53 @@ article {
   border: 1px solid rgba(0, 0, 0, 0.09);
   margin-top: 20px;
 }
-/* line 174, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 article h2 {
   margin-top: 0;
   font-size: 22px;
   font-weight: bold;
 }
-/* line 180, ../sass/style.scss */
+/* line 185, ../sass/style.scss */
 article p {
   font-size: 14px;
   color: #999;
 }
-/* line 186, ../sass/style.scss */
+/* line 191, ../sass/style.scss */
 article .voting-buttons {
   float: left;
   margin-right: 20px;
 }
-/* line 189, ../sass/style.scss */
+/* line 194, ../sass/style.scss */
 article .voting-buttons .btn {
   margin-bottom: 5px;
   width: 50px;
   padding: 5px 0;
 }
-/* line 194, ../sass/style.scss */
+/* line 199, ../sass/style.scss */
 article .voting-buttons .btn:hover {
   background: #e7e7e7;
 }
-/* line 199, ../sass/style.scss */
+/* line 204, ../sass/style.scss */
 article .label {
   color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 204, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 .tag-description {
   margin-top: 20px;
 }
-/* line 206, ../sass/style.scss */
+/* line 211, ../sass/style.scss */
 .tag-description .panel {
   padding: 20px;
   margin-bottom: 0;
 }
-/* line 210, ../sass/style.scss */
+/* line 215, ../sass/style.scss */
 .tag-description .panel h1 {
   font-weight: bold;
   font-size: 20px;
   margin-top: 0;
 }
-/* line 215, ../sass/style.scss */
+/* line 220, ../sass/style.scss */
 .tag-description .panel h2 {
   font-weight: normal;
   font-size: 18px;
@@ -226,45 +231,50 @@ article .label {
 }
 
 /* Post detail */
-/* line 226, ../sass/style.scss */
+/* line 231, ../sass/style.scss */
 .comment {
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04);
 }
-/* line 228, ../sass/style.scss */
+/* line 233, ../sass/style.scss */
 .comment .footer {
   float: right;
 }
-/* line 230, ../sass/style.scss */
+/* line 235, ../sass/style.scss */
 .comment .footer a {
   cursor: pointer;
 }
-/* line 233, ../sass/style.scss */
+/* line 238, ../sass/style.scss */
 .comment .footer .score {
   font-weight: bold;
 }
 
-/* line 240, ../sass/style.scss */
+/* line 245, ../sass/style.scss */
 .comment .comment {
-  margin-right: -20px;
+  margin-right: -20.5px;
 }
 
 /* Modals */
 /* Pagination */
-/* line 249, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 .pagination {
   width: 100%;
   margin: 10px 0;
   padding: 5px;
   text-align: center;
 }
-/* line 255, ../sass/style.scss */
+/* line 260, ../sass/style.scss */
 .pagination .fa {
   margin-top: 6px;
   color: #999;
 }
 
 /* Footer */
-/* line 263, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
+footer {
+  color: #999;
+}
+/* line 270, ../sass/style.scss */
 footer a {
+  color: #999;
   font-weight: bold;
 }
