@@ -193,9 +193,6 @@ def post_create(request):
             # hubs = post.hubs.all()
             
             return HttpResponseRedirect('/post/'+post.slug)
-        else:
-            errors = str(form.errors)
-            return HttpResponseRedirect('/?error='+errors)        
 
     else:
         # for errors
