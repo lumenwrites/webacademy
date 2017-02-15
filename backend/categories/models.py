@@ -11,7 +11,7 @@ class Category(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super(Tag, self).save(*args, **kwargs)
+        super(Category, self).save(*args, **kwargs)
 
         
     @permalink

@@ -6,6 +6,7 @@ from django.conf import settings
 from django.db.models import permalink
 
 from tags.models import Tag
+from categories.models import Category
 
 
 class Post(models.Model):
@@ -21,6 +22,11 @@ class Post(models.Model):
                                null=True)    
     
     tags = models.ManyToManyField('tags.Tag', related_name="posts", blank=True)
+    category = models.ForeignKey('categories.Category',
+                                 on_delete=models.CASCADE,
+                                 related_name="posts",
+                                 null=True)    
+
     score = models.IntegerField(default=0)
 
 

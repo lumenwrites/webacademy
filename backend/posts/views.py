@@ -11,6 +11,7 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import PostForm
 from tags.models import Tag
+from categories.models import Category
 
 
 class FilterMixin(object):
@@ -28,12 +29,19 @@ class FilterMixin(object):
         posttype = self.request.GET.get('posttype')
         if posttype:
             qs = qs.filter(post_type=posttype)   
+
         level = self.request.GET.get('level')
         if level:
             qs = qs.filter(post_level=level)   
-        price = self.request.GET.get('price')
+
+        price = self.request.GET.get('price')       
         if price:
-            qs = qs.filter(post_price=price)   
+            qs = qs.filter(post_price=price)
+
+        category = self.request.GET.get('category')
+        if category:
+            category = Category.objects.get(slug=category)
+            qs = qs.filter(category=category)            
 
         # Filter by query
         query = self.request.GET.get('query')
@@ -72,6 +80,10 @@ class FilterMixin(object):
         tags = Tag.objects.all()
         tags = Tag.objects.annotate(num_posts=Count('posts')).order_by('-num_posts')   
         context['tags'] = tags
+
+        # All Categories
+        categories = Category.objects.all()        
+        context['categories'] = categories
 
         # Solo Tag
         context['tag'] = self.request.GET.get('tag')
