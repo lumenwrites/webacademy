@@ -19,13 +19,8 @@ class FilterMixin(object):
     def get_queryset(self):
         qs = super(FilterMixin, self).get_queryset()
 
-        # Filter by category
-        # try:
-        #     selectedhubs = self.request.GET['hubs'].split(",")
-        # except:
-        #     selectedhubs = []
+        # Filtering by type, level, price, category
 
-        # Filter by posttype
         posttype = self.request.GET.get('posttype')
         if posttype:
             qs = qs.filter(post_type=posttype)   
@@ -43,12 +38,14 @@ class FilterMixin(object):
             category = Category.objects.get(slug=category)
             qs = qs.filter(category=category)            
 
-        # Filter by query
+        # Filter by query.
         query = self.request.GET.get('query')
         if query:
+            # Search in titles, descriptions, authors, tags
             qs = qs.filter(Q(title__icontains=query) |
                            Q(body__icontains=query) |
-                           Q(author__username__icontains=query))                    
+                           Q(author__username__icontains=query) |
+                           Q(tags__title__icontains=query))                    
 
 
 
