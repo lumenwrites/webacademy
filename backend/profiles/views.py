@@ -21,9 +21,22 @@ def login(request):
     if auth_form.is_valid():
         auth_login(request, auth_form.get_user())
         return HttpResponseRedirect(nextpage)
-
+    
+    else:
+        # for errors
+        return render(request, 'profiles/login.html', {
+            'loginform': auth_form,
+        })
+    
 # Only sign up
 def join(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/')
+ 
+    nextpage = request.GET.get('next', '/')
+
+    auth_form = RegistrationForm()
+
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
 
@@ -41,8 +54,17 @@ def join(request):
             auth_login(request, user)
             return HttpResponseRedirect("/")
         else:
-            errors = str(form.errors)
-            return HttpResponseRedirect("/?error="+errors)
+            # for errors
+            return render(request, 'profiles/login.html', {
+                'joinform': form,
+            })
+
+    else:
+        return render(request, 'profiles/login.html', {
+            'joinform': auth_form,
+        })
+
+
 
 # Email subscribe
 def email_subscribe(request):
