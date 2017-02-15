@@ -6,6 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.db.models import Q, Count
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseRedirect
 
 from .models import Post
 from .forms import PostForm
@@ -102,6 +103,8 @@ class PostDetailView(DetailView):
     context_object_name = 'post'    
     template_name = "posts/post-detail.html"
 
+
+
     
 
 
@@ -170,3 +173,32 @@ def unupvote(request):
     return HttpResponse()
 
     
+
+
+
+def post_create(request):
+    form = PostForm()
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.score += 1 # self upvote
+            post.save()
+
+            # request.user.upvoted.add(post)
+
+            # Add hubs
+            # post.hubs.add(*form.cleaned_data['hubs'])
+            # hubs = post.hubs.all()
+            
+            return HttpResponseRedirect('/post/'+post.slug)
+        else:
+            errors = str(form.errors)
+            return HttpResponseRedirect('/?error='+errors)        
+
+    else:
+        # for errors
+        return render(request, 'posts/create.html', {
+            'submitform':form,
+        })

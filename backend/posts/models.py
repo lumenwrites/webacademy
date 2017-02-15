@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.conf import settings
@@ -48,3 +50,15 @@ class Post(models.Model):
 
 
 
+
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.pub_date = datetime.datetime.now()
+
+        if self.pk is None:            
+            self.slug = slugify(self.title)
+                    
+        return super(Post, self).save(*args, **kwargs)
+    
+    
