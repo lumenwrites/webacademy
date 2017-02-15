@@ -107,6 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Disable password validation
+AUTH_PASSWORD_VALIDATORS = []
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
