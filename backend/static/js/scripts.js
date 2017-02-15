@@ -32,7 +32,6 @@ $(document).ready(function() {
 
 
     /* Filtering */
-    
     $('.dropdown-menu').on('click', 'a', function(e) {
 	e.preventDefault();
 	/* Grab the value */
@@ -45,43 +44,24 @@ $(document).ready(function() {
 	    url = $.query.REMOVE(filter);	    
 	}
 	/* Go to the url */
-	window.location = url;
+	window.location = "/"+url;
     });
 
 
+    /* Search */
+    $('#search-form').submit(function(event){
+	/* Custom get request */
+	event.preventDefault();
+	event.stopPropagation();
+
+	var query = $('#searchbar').val(); 
+	var url = $.query.set('query', query);
+	/* Send the get request */
+	window.location = "/"+url;
+    });
+
+
+
     
 });
-
-
-
-/* Search */
-$('#search-form').submit(function(event){
-    /* Custom get request */
-    event.preventDefault();
-    event.stopPropagation();
-
-    var query = $('#searchbar').val(); 
-
-    var posttype = [];
-    /* Grab post type */
-
-    if (query){
-	var query = '?query=' + query;
-    } else {
-	var query = ""
-    }
-    
-    if (query && posttype > 0){
-	/* If there's a query, add posttype at the end */
-	var posttype = '&posttype=' + posttype;
-    } else if (posttype) {
-	/* If not - just filter by posttype. proabbly category first. */
-	var posttype = '?posttype=' + posttype;	
-    } else {
-	var posttype = ""
-    }
-    /* Send the get request */
-    window.location = action + query + hubs;
-});
-
 

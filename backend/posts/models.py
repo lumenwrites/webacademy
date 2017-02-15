@@ -13,6 +13,12 @@ class Post(models.Model):
     slug = models.SlugField(max_length=256, default="")    
     url = models.URLField(default="", null=True, blank=True)
     body = models.TextField(default="", null=True, blank=True)
+
+    pub_date = models.DateTimeField(blank=True, null=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL,
+                               on_delete=models.CASCADE,
+                               related_name="posts",
+                               null=True)    
     
     tags = models.ManyToManyField('tags.Tag', related_name="posts", blank=True)
     score = models.IntegerField(default=0)

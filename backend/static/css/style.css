@@ -10,6 +10,11 @@
   float: right;
 }
 
+/* line 10, ../sass/_helpers.scss */
+.hidden {
+  display: none;
+}
+
 /* line 1, ../sass/_general.scss */
 html, body {
   font-family: "Noto Sans", sans-serif;
