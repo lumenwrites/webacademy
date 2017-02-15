@@ -8,11 +8,12 @@
 	  </a>
 
 	  <!-- Search -->
-	  <form>
+	  <form action="" method="get" id="search-form">
 	    <input type="text" class="form-control" id="searchbar"
 		   placeholder="What do you want to learn?"
 		   data-provide="typeahead"
-		   autocomplete="off">
+		   autocomplete="off"
+		   name="query" value="{{query}}">
 	    <i class="fa fa-search" aria-hidden="true"></i>    
 
 	  </form>
@@ -96,10 +97,11 @@
 	  <a class="btn btn-default" data-toggle="dropdown">
 	    Format: All
 	  </a>
-	  <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Video</a></li>
-            <li><a href="#">Article</a></li>
-            <li><a href="#">Book</a></li>
+	  <ul class="dropdown-menu" role="menu" id="posttype">
+            <li><a href="all">All</a></li>	    
+            <li><a href="video">Video</a></li>
+            <li><a href="article">Article</a></li>
+            <li><a href="book">Book</a></li>
           </ul>	
 	</div>
 
@@ -108,10 +110,11 @@
 	  <a class="btn btn-default" data-toggle="dropdown">
 	    Level: All
 	  </a>
-	  <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Beginner</a></li>
-            <li><a href="#">Intermediate</a></li>
-            <li><a href="#">Advanced</a></li>
+	  <ul class="dropdown-menu" role="menu" id="level">
+            <li><a href="all">All</a></li>	    
+            <li><a href="beginner">Beginner</a></li>
+            <li><a href="intermediate">Intermediate</a></li>
+            <li><a href="advanced">Advanced</a></li>
           </ul>	
 	</div>
 
@@ -120,9 +123,10 @@
 	  <a class="btn btn-default" data-toggle="dropdown">
 	    Price: All
 	  </a>
-	  <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Free</a></li>
-            <li><a href="#">Paid</a></li>
+	  <ul class="dropdown-menu" role="menu" id="price">
+            <li><a href="all">All</a></li>	    
+            <li><a href="free">Free</a></li>
+            <li><a href="paid">Paid</a></li>
           </ul>	
 	</div>
 
