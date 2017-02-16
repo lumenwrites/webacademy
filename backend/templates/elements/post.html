@@ -38,10 +38,12 @@
     {{post.body}}
   </p>
   <!-- Post tags -->
-  <span class="label label-default">Backend</span>            
-  <span class="label label-default">Django</span>
-  <span class="label label-default">Video</span>
-  <span class="label label-default">Beginner</span>      
-  <span class="label label-default">Paid</span>            
+  <span class="label label-default">{{post.category.title}}</span>
+  {% for tag in post.tags.all %}
+  <span class="label label-default">{{tag.title}}</span>
+  {% endfor %}
+  <span class="label label-default">{{post.post_type | title}}</span>
+  <span class="label label-default">{{post.post_level | title}}</span>      
+  <span class="label label-default">{{post.post_price | title }}</span>            
 </article>
 

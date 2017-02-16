@@ -15,6 +15,16 @@
   display: none;
 }
 
+/* line 14, ../sass/_helpers.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 18, ../sass/_helpers.scss */
+.pointer {
+  cursor: pointer;
+}
+
 /* line 1, ../sass/_general.scss */
 html, body {
   font-family: "Noto Sans", sans-serif;
@@ -30,6 +40,7 @@ h2 {
 /* line 11, ../sass/_general.scss */
 a {
   color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 /* line 13, ../sass/_general.scss */
 a:hover {
@@ -37,21 +48,21 @@ a:hover {
   text-decoration: none;
 }
 
-/* line 19, ../sass/_general.scss */
+/* line 20, ../sass/_general.scss */
 hr {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   margin: 10px 0;
 }
 
-/* line 25, ../sass/_general.scss */
+/* line 26, ../sass/_general.scss */
 textarea, textarea:focus, textarea:active {
   resize: none;
   box-shadow: none !important;
 }
 
 /* Customize bootstrap */
-/* line 34, ../sass/_general.scss */
+/* line 35, ../sass/_general.scss */
 .btn-default {
   border-radius: 2px;
   background: transparent;
