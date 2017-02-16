@@ -25,6 +25,12 @@
   cursor: pointer;
 }
 
+/* line 22, ../sass/_helpers.scss */
+.fill {
+  min-height: 100%;
+  height: 100%;
+}
+
 /* line 1, ../sass/_general.scss */
 html, body {
   font-family: "Noto Sans", sans-serif;
@@ -152,60 +158,61 @@ article {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.09);
   margin-top: 20px;
+  min-height: 130px;
 }
-/* line 9, ../sass/_posts.scss */
+/* line 10, ../sass/_posts.scss */
 article h2 {
   margin-top: 0;
   font-size: 22px;
   font-weight: bold;
 }
-/* line 15, ../sass/_posts.scss */
+/* line 16, ../sass/_posts.scss */
 article p {
   font-size: 14px;
   color: #999;
 }
-/* line 21, ../sass/_posts.scss */
+/* line 22, ../sass/_posts.scss */
 article .voting-buttons {
   float: left;
   margin-right: 20px;
 }
-/* line 24, ../sass/_posts.scss */
+/* line 25, ../sass/_posts.scss */
 article .voting-buttons .btn {
   margin-bottom: 5px;
   width: 50px;
   padding: 5px 0;
 }
-/* line 29, ../sass/_posts.scss */
+/* line 30, ../sass/_posts.scss */
 article .voting-buttons .btn:hover {
   background: #e7e7e7;
 }
-/* line 34, ../sass/_posts.scss */
+/* line 35, ../sass/_posts.scss */
 article .voting-buttons .upvoted {
   background: #da552f;
   color: white;
   border: none;
 }
-/* line 42, ../sass/_posts.scss */
+/* line 43, ../sass/_posts.scss */
 article .label {
   color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 49, ../sass/_posts.scss */
+/* line 50, ../sass/_posts.scss */
 .tag-description {
   margin-top: 20px;
 }
-/* line 51, ../sass/_posts.scss */
+/* line 52, ../sass/_posts.scss */
 .tag-description .panel {
   padding: 20px;
   margin-bottom: 0;
 }
-/* line 55, ../sass/_posts.scss */
+/* line 56, ../sass/_posts.scss */
 .tag-description .panel h1 {
   font-weight: bold;
   font-size: 20px;
   margin-top: 0;
 }
-/* line 60, ../sass/_posts.scss */
+/* line 61, ../sass/_posts.scss */
 .tag-description .panel h2 {
   font-weight: normal;
   font-size: 18px;
@@ -213,24 +220,25 @@ article .label {
 }
 
 /* Post detail */
-/* line 71, ../sass/_posts.scss */
+/* line 72, ../sass/_posts.scss */
 .comment {
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04);
+  min-height: 0;
 }
-/* line 73, ../sass/_posts.scss */
+/* line 75, ../sass/_posts.scss */
 .comment .footer {
   float: right;
 }
-/* line 75, ../sass/_posts.scss */
+/* line 77, ../sass/_posts.scss */
 .comment .footer a {
   cursor: pointer;
 }
-/* line 78, ../sass/_posts.scss */
+/* line 80, ../sass/_posts.scss */
 .comment .footer .score {
   font-weight: bold;
 }
 
-/* line 85, ../sass/_posts.scss */
+/* line 87, ../sass/_posts.scss */
 .comment .comment {
   margin-right: -20.5px;
 }

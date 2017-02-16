@@ -26,3 +26,22 @@ def comment_submit(request, post_slug=""):
         prev_url = request.GET.get('next', '/')
         return HttpResponseRedirect(prev_url)
 
+
+
+def reply_submit(request, post_slug, comment_id):
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.author = request.user
+            comment.post = Post.objects.get(slug=post_slug)            
+            comment.parent = Comment.objects.get(id=comment_id)
+            comment.save()
+
+            # comment_url = request.GET.get('next', '/')+"#id-"+str(comment.id)
+            return HttpResponseRedirect(comment.post.get_absolute_url())
+        else:
+            comment_url = request.GET.get('next', '/')
+            return HttpResponseRedirect(comment_url)
+    return HttpResponseRedirect('/error')                    
+    

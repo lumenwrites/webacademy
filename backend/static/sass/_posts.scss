@@ -5,6 +5,7 @@ article {
     box-shadow: 0 1px 4px rgba(0,0,0,.04);
     border: 1px solid rgba(0,0,0,.09);
     margin-top: 20px;
+    min-height: 130px;
 
     h2 {
 	margin-top:0;
@@ -70,6 +71,7 @@ article {
 
 .comment {
     box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04);
+    min-height: 0;
     .footer {
 	float: right;
 	a {
