@@ -43,6 +43,15 @@ article {
     .label {
 	color: $dark-gray;
     }
+    .post-footer {
+	@extend p;
+	background: rgba(0,0,0,0.02);
+	padding: 7px 10px 10px 10px;
+	margin: 5px -20px -20px -20px;
+	background-color: #fcfcfc;
+	border-top: 1px solid #e8e8e8;
+
+    }
 }
 
 
