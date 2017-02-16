@@ -35,7 +35,7 @@
   <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
   <!-- Post body -->
   <p>
-    {{post.body}}
+    {{post.body}} <!-- |truncatechars:200 -->
   </p>
   <!-- Post tags -->
   <span class="label label-default">{{post.category.title}}</span>

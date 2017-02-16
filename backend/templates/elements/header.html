@@ -1,7 +1,7 @@
   <header>
     <div class="container">
       <div class="row">      
-	<div class="col-md-8 col-sm-8">
+	<div class="col-xs-8">
 	  <!-- Logo -->
 	  <a href="/" class="logo">
 	      WA
@@ -20,7 +20,7 @@
 	  </form>
 	</div>
 	<!-- Menu -->
-	<div class="col-md-4 col-sm-4">
+	<div class="col-xs-4">
 	  <ul class="nav navbar-nav right">
 	    {% if user.is_authenticated %}
             <li>
@@ -68,7 +68,7 @@
 
     <!-- Subnav -->
     <div class="row subnav">      
-      <div class="col-md-8 col-sm-8 filters">
+      <div class="col-xs-12 filters">
 	<div class="dropdown">
 	  <a class="btn btn-default" data-toggle="dropdown">
 	    {% if not category %}
