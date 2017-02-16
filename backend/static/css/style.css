@@ -237,8 +237,12 @@ article .label {
 .comment .footer .score {
   font-weight: bold;
 }
+/* line 84, ../sass/_posts.scss */
+.comment .footer .comment-upvoted {
+  color: #da552f;
+}
 
-/* line 87, ../sass/_posts.scss */
+/* line 91, ../sass/_posts.scss */
 .comment .comment {
   margin-right: -20.5px;
 }

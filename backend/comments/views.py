@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 
 from posts.models import Post
 from .models import Comment
@@ -44,4 +44,27 @@ def reply_submit(request, post_slug, comment_id):
             comment_url = request.GET.get('next', '/')
             return HttpResponseRedirect(comment_url)
     return HttpResponseRedirect('/error')                    
-    
+
+
+# Voting
+def comment_upvote(request):
+    comment = Comment.objects.get(id=request.POST.get('comment-id'))
+    comment.score += 1
+    comment.save()
+    comment.author.karma += 1
+    comment.author.save()
+    user = request.user
+    user.comments_upvoted.add(comment)
+    user.save()
+    return HttpResponse()
+
+def comment_unupvote(request):
+    comment = Comment.objects.get(id=request.POST.get('comment-id'))
+    comment.score -= 1
+    comment.save()
+    comment.author.karma = 1
+    comment.author.save()
+    user = request.user
+    user.comments_upvoted.remove(comment)
+    user.save()
+    return HttpResponse()

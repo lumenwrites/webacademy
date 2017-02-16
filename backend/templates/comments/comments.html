@@ -38,13 +38,26 @@
     <!-- Reply -->
     {% if user.is_authenticated %}      
     <a class="show-reply">reply</a>
+    {% else %}
+    <a data-toggle="modal" data-target="#login">reply</a>    
     {% endif %}
-    <!-- Score
-    <a>
-      <span class="score">1</span>
+
+    {% if user.is_authenticated %}    
+    <!-- Vote -->
+    <a class="comment-upvote
+	      {% if comment in user.comments_upvoted.all %}comment-upvoted{% endif %}"
+       id="comment-upvote-{{comment.id}}">
+      <span class="score">{{comment.score}}</span>
       <i class="fi-arrow-up"></i>
     </a>
-    -->
+    {% else %}
+    <!-- If not authenticated - open login popup. -->
+    <a data-toggle="modal" data-target="#login">
+      <span class="score">{{comment.score}}</span>
+      <i class="fi-arrow-up"></i>
+    </a>    
+    {% endif %}        
+    
   </div> <!-- End .footer -->
   <div class="clearfix"></div>
 

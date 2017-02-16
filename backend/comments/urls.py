@@ -1,6 +1,7 @@
 from django.conf.urls import url
 
 from .views import comment_submit, reply_submit
+from .views import comment_upvote, comment_unupvote
 
 urlpatterns = [
     # Comments
@@ -10,6 +11,6 @@ urlpatterns = [
     # url(r'^comment/(?P<comment_id>[^\.]+)/edit', comment_edit),
     # url(r'^comment/(?P<comment_id>[^\.]+)/delete', comment_delete), 
 
-    # url(r'^comment-upvote/', comment_upvote),
-    # url(r'^comment-unupvote/', comment_unupvote),
+    url(r'^comment-upvote/', comment_upvote),
+    url(r'^comment-unupvote/', comment_unupvote),
 ]

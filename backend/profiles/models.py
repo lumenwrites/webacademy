@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db.models import permalink
 
 from posts.models import Post
+from comments.models import Comment
 
 class User(AbstractUser):  
     # about = models.TextField(max_length=512, blank=True)
@@ -11,7 +12,7 @@ class User(AbstractUser):
     created = models.DateTimeField(auto_now_add=True)
 
     upvoted = models.ManyToManyField('posts.Post', related_name="upvoters", blank=True)
-    
+    comments_upvoted = models.ManyToManyField('comments.Comment', related_name="upvoters", blank=True)    
 
     # Email notifications
     # email_subscriptions = models.BooleanField(default=True,
