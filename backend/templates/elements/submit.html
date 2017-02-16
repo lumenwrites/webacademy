@@ -52,7 +52,11 @@
               <div class="col-lg-3">
 		<select name="post_category" class="form-control">
 		  <option value="">Category</option>
-		  <option value="backend">Backend</option>
+		  {% for category in categories %}
+		  <option value="{{category.slug}}">{{category.title}}</option>
+		  {% endfor %}	    
+		  
+
 		</select>
 	      </div>
               <div class="col-lg-3">

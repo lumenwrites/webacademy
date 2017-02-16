@@ -7,6 +7,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.db.models import Q, Count
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect, HttpResponse
+from django.template.defaultfilters import slugify
 
 from .models import Post
 from .forms import PostForm
@@ -130,7 +131,13 @@ class PostDetailView(DetailView):
     template_name = "posts/post-detail.html"
 
 
+    def get_context_data(self, **kwargs):
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        context['submitform'] = PostForm()
+        categories = Category.objects.all()        
+        context['categories'] = categories
 
+        return context
     
 
 
@@ -205,8 +212,22 @@ def post_create(request):
 
             # request.user.upvoted.add(post)
 
-            # Add hubs
-            # post.hubs.add(*form.cleaned_data['hubs'])
+            # Add tags
+            tags = request.POST.get('tags')
+            if tags:
+                tags = tags.split(",")
+                for tag in tags:
+                    title = tag.strip()
+                    slug = slugify(title)
+                    # Get tag by slug. Create tag if it doesn't exist.
+                    try: 
+                        tag = Tag.objects.get(slug=slug)
+                    except:
+                        tag = Tag.objects.create(title=tag)
+                    post.tags.add(tag)
+            post.save()
+                    
+            # post.hubs.add(*form.cleaned_data['tags'])
             # hubs = post.hubs.all()
             
             return HttpResponseRedirect('/post/'+post.slug)
