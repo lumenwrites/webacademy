@@ -86,6 +86,23 @@ class FilterMixin(object):
         context['tag'] = self.request.GET.get('tag')
 
 
+        # Pass selected filters (to show them in subnav).
+        posttype = self.request.GET.get('posttype')
+        if posttype:
+            context['posttype'] = posttype.title()
+        level = self.request.GET.get('level')
+        if level:
+            context['level'] = level.title()
+        price = self.request.GET.get('price')       
+        if price:
+            context['price'] = price.title()
+
+        category = self.request.GET.get('category')
+        if category:
+            category = Category.objects.get(slug=category)
+            context['category'] = category.title
+
+            
         # Query
         query = self.request.GET.get('query')
         if query:

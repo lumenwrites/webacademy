@@ -71,9 +71,14 @@
       <div class="col-md-8 col-sm-8 filters">
 	<div class="dropdown">
 	  <a class="btn btn-default" data-toggle="dropdown">
+	    {% if not category %}
 	    Category: All
+	    {% else %}
+	    {{category}}
+	    {% endif %}	    	    
 	  </a>
 	  <ul class="dropdown-menu" role="menu" id="category">
+	    <li><a href="all">All</a></li>
 	    {% for category in categories %}
             <li><a href="{{category.slug}}">{{category.title}}</a></li>
 	    {% endfor %}	    
@@ -93,7 +98,11 @@
 	-->
 	<div class="dropdown">
 	  <a class="btn btn-default" data-toggle="dropdown">
+	    {% if not posttype %}
 	    Format: All
+	    {% else %}
+	    {{posttype}}
+	    {% endif %}		    
 	  </a>
 	  <ul class="dropdown-menu" role="menu" id="posttype">
             <li><a href="all">All</a></li>	    
@@ -106,7 +115,11 @@
 
 	<div class="dropdown">
 	  <a class="btn btn-default" data-toggle="dropdown">
+	    {% if not level %}
 	    Level: All
+	    {% else %}
+	    {{level}}
+	    {% endif %}		    
 	  </a>
 	  <ul class="dropdown-menu" role="menu" id="level">
             <li><a href="all">All</a></li>	    
@@ -119,7 +132,11 @@
 
 	<div class="dropdown">
 	  <a class="btn btn-default" data-toggle="dropdown">
+	    {% if not price %}
 	    Price: All
+	    {% else %}
+	    {{price}}
+	    {% endif %}		    
 	  </a>
 	  <ul class="dropdown-menu" role="menu" id="price">
             <li><a href="all">All</a></li>	    
