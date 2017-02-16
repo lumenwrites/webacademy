@@ -1,67 +1,38 @@
-    <!-- Leave a comment -->
-    <textarea class="form-control" placeholder="Leave a comment..."></textarea>
-    <a class="btn btn-primary right">Submit</a>
-    <div class="clearfix"></div>
+<!-- Leave a comment -->
+{% if user.is_authenticated %}      
+<form action="/comment-submit/{{post.slug}}?next={{request.path}}"
+      method="post">{% csrf_token %}
 
-    <!-- Comments -->
-    <article class="comment">
-      <div class="body">
-	Hey, this is a fantastic resource!
-      </div>
-      <div class="footer">
-	<a class="username" href="#">@rayalez</a>
-	<a>
-	  <span class="score">1</span>
-	  <i class="fi-arrow-up"></i>
-	</a>      
-      </div>
-      <div class="clearfix"></div>
+  <textarea class="form-control"
+	    name="body"
+	    placeholder="Leave a comment..."></textarea>
 
-    <article class="comment">
-      <div class="body">
-	Hey, this is a fantastic resource!
-      </div>
-      <div class="footer">
-	<a class="username" href="#">@rayalez</a>
-	<a>
-	  <span class="score">1</span>
-	  <i class="fi-arrow-up"></i>
-	</a>      
-      </div>
-      <div class="clearfix"></div>
+  <!-- Submit -->
+  <button class="btn btn-primary right" type="submit">Submit</button>
+  <div class="clearfix"></div>
+</form>
+{% else %}
+<!-- Login to leave a comment. -->
+<a data-toggle="modal" data-target="#login">Login</a> to leave a comment.
+<br/>
+{% endif %}
 
 
-    <article class="comment">
-      <div class="body">
-	Hey, this is a fantastic resource!
-      </div>
-      <div class="footer">
-	<a class="username" href="#">@rayalez</a>
-	<a>
-	  <span class="score">1</span>
-	  <i class="fi-arrow-up"></i>
-	</a>      
-      </div>
-      <div class="clearfix"></div>
 
-    <article class="comment">
-      <div class="body">
-	Hey, this is a fantastic resource!
-      </div>
-      <div class="footer">
-	<a class="username" href="#">@rayalez</a>
-	<a>
-	  <span class="score">1</span>
-	  <i class="fi-arrow-up"></i>
-	</a>      
-      </div>
-      <div class="clearfix"></div>
-    </article>
-      
-    </article>
-
-    
-    </article>
-      
-
-    </article>
+<!-- Comments -->
+{% for comment in post.comments.all %}
+<article class="comment">
+  <div class="body">
+    {{comment.body}}
+  </div>
+  <!-- Comment footer -->
+  <div class="footer">
+    <a class="username" href="#">@rayalez</a>
+    <a>
+      <span class="score">1</span>
+      <i class="fi-arrow-up"></i>
+    </a>      
+  </div> <!-- End .footer -->
+  <div class="clearfix"></div>
+</article> <!-- End .comment -->
+{% endfor %}
