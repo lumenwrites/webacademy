@@ -1,19 +1,10 @@
 
-/* auto open modal */
+/* Auto open modal (for debugging) */
 $(window).on('load', function(){
     /* $('#submit').modal('show');*/
 });
 
 
-/* Search autocomplete */
-$('#searchbar').typeahead({
-    source: [
-            "Django",
-        "React",
-	]
-});
-
-$('#searchbar').typeahead()
 
 
 $(document).ready(function() {
@@ -23,13 +14,33 @@ $(document).ready(function() {
 	console.log("Subscription box closed!");
 	Cookies.set('subscription_box_closed', 'yes', { expires: 7 });
     });	
-
     /* If a cookie isn't set - display the box (it's hidden by default). */
     if (Cookies.get('subscription_box_closed')==null) {
         $('.subscription-box').css("display","block");
     }
 
 
+
+    /* Search autocomplete */
+    $('#searchbar').typeahead({
+	source: [
+            "Django",
+            "React",
+	]
+    });
+    $('#searchbar').typeahead()
+    
+    /* Search */
+    $('#search-form').submit(function(event){
+	/* Custom get request */
+	event.preventDefault();
+	event.stopPropagation();
+
+	var query = $('#searchbar').val(); 
+	var url = $.query.set('query', query);
+	/* Send the get request */
+	window.location = "/"+url;
+    });
 
     /* Filtering */
     $('.dropdown-menu').on('click', 'a', function(e) {
@@ -48,20 +59,9 @@ $(document).ready(function() {
     });
 
 
-    /* Search */
-    $('#search-form').submit(function(event){
-	/* Custom get request */
-	event.preventDefault();
-	event.stopPropagation();
-
-	var query = $('#searchbar').val(); 
-	var url = $.query.set('query', query);
-	/* Send the get request */
-	window.location = "/"+url;
-    });
 
 
 
     
-});
+}); /* End document ready */
 

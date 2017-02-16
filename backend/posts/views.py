@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.db.models import Q, Count
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 
 from .models import Post
 from .forms import PostForm
@@ -159,15 +159,6 @@ def upvote(request):
     user = request.user
     user.upvoted.add(post)
     user.save()
-
-    # Notification
-    notification = Notification(from_user=request.user,
-                                to_user=post.author,
-                                post=post,
-                                notification_type="upvote")
-    notification.save()
-    post.author.new_notifications = True
-    post.author.save()
     return HttpResponse()
 
 def unupvote(request):

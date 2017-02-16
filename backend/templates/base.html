@@ -50,14 +50,16 @@
   {% include "elements/login.html" %}    
 
   <script src="{% static "/js/jquery.min.js" %}"></script>
-  <script src="{% static "/js/js.cookie.js" %}"></script>  
   <script src="{% static "/js/bootstrap.min.js" %}"></script>
+  <!-- For keeping CTAs closed. -->
+  <script src="{% static "/js/js.cookie.js" %}"></script>
+  <!-- For search autocomplete. -->
   <script src="{% static "/js/bootstrap-typeahead.min.js" %}"></script>
-  <script src="{% static "/js/jquery.query-object.js" %}"></script>    
+  <!-- For modifying GET url (search and filters) -->
+  <script src="{% static "/js/jquery.query-object.js" %}"></script>
+  <!-- My JS -->
   <script src="{% static "/js/scripts.js" %}"></script>
+  <script src="{% static "/js/voting.js" %}"></script>  
 
-  <script type="text/javascript">
-
-  </script>  
 </body>
 </html>

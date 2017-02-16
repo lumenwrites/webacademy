@@ -1,34 +1,47 @@
-    <article>
-      <div class="voting-buttons">
-	<a class="btn btn-default vote" href="">
-	  <i class="fa fa-chevron-up"></i>
-	  <div>
-	    {{post.score}}
-	  </div>
-	</a>
-	<br/>
-	<a class="btn btn-default comment" href="{{post.get_absolute_url}}">      
-	  <i class="fi-comment"></i>
-	  {{post.comments.count}}
-	</a>
+<article>
+
+
+  <div class="voting-buttons">
+    <!-- Voting -->
+    {% if user.is_authenticated %}    
+    <a class="btn btn-default upvote
+	      {% if post in user.upvoted.all %}upvoted{% endif %}"
+       id="post-upvote-{{post.id}}">
+      <i class="fa fa-chevron-up"></i>
+      <div class="score">
+	{{post.score}}
       </div>
+    </a>
+    {% else %}
+    <!-- If not authenticated - open login popup. -->
+    <a class="btn btn-default"
+       data-toggle="modal" data-target="#login">
+      <i class="fa fa-chevron-up"></i>
+      <div class="score">
+	{{post.score}}
+      </div>
+    </a>    
+    {% endif %}    
 
-      <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
-      <!-- <hr/> -->
-      <p>
-	{{post.body}}
-      </p>
-      <span class="label label-default">Backend</span>            
-      <span class="label label-default">Django</span>
-      <span class="label label-default">Video</span>
-      <span class="label label-default">Beginner</span>      
-      <span class="label label-default">Paid</span>            
+    <br/>
+    <!-- Comments -->
+    <a class="btn btn-default comment" href="{{post.get_absolute_url}}">      
+      <i class="fi-comment"></i>
+      {{post.comments.count}}
+    </a>
+  </div>
 
-      <!-- 
-      <a class="btn btn-default" href="">      
-	<i class="fi-comment"></i>
-	12
-      </a>
-      -->
-    </article>
- 
+  <!-- Post title -->
+  <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
+  <!-- Post body -->
+  <p>
+    {{post.body}}
+  </p>
+  <!-- Post tags -->
+  <span class="label label-default">Backend</span>            
+  <span class="label label-default">Django</span>
+  <span class="label label-default">Video</span>
+  <span class="label label-default">Beginner</span>      
+  <span class="label label-default">Paid</span>            
+</article>
+
