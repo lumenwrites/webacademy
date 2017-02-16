@@ -225,7 +225,15 @@ def post_create(request):
                     except:
                         tag = Tag.objects.create(title=tag)
                     post.tags.add(tag)
+
+            # Add category
+            category = request.POST.get('post_category')
+            if category:
+                category = Category.objects.get(slug=category)
+                post.category = category
             post.save()
+
+            
                     
             # post.hubs.add(*form.cleaned_data['tags'])
             # hubs = post.hubs.all()
