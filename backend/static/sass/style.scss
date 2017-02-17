@@ -60,6 +60,12 @@ $light-gray: #e7e7e7;
 	top: 19px;
 	right: 22px;
 	font-size: 32px;
+
+	@media  (max-width: 740px) {	
+	    top: 10px;
+	    right: 30px;
+	}
+
     }
 }
 
