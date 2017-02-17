@@ -14,12 +14,22 @@
 	      </div>
 
 	      <div class="input-group">
-		<input type="text" class="form-control" placeholder="email">
-		<span class="input-group-btn">
-                  <button class="btn btn-default" type="button">Receive weekly email digest!</button>
-		</span>
+		<form method="post"
+		      action="/subscribe/?next={{request.path}}">{% csrf_token %}  
+		  <input type="text" name="email" id="id_email"
+			 class="form-control" placeholder="email" />
+		  <span class="input-group-btn">
+                    <input class="btn btn-default" type="submit"
+			   value="Receive weekly email digest!"/>
+		  </span>
+		</form>
 	      </div>
 	  </div> <!-- End .col-md-12 col-sm-12 -->
 	</div> <!-- End .panel -->
       </div> <!-- End .col-md-12 -->
     </div> <!-- End .subscription-box -->
+
+
+<div class="alert alert-success">
+  <strong>Success!</strong> Thank you for subscribing!
+</div>    

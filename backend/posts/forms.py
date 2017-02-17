@@ -9,8 +9,12 @@ class PostForm(ModelForm):
         model = Post
         fields = ['title', 'url', 'body', 'post_type', 'post_level', 'post_price']
         widgets = {
-            'body': forms.Textarea(attrs={'class': 'markdown',
-                                          'id': 'markdown'}),
+            'title': forms.TextInput(attrs={'class': 'form-control',
+                                            'placeholder': 'Title'}),
+            'url': forms.TextInput(attrs={'class': 'form-control',
+                                            'placeholder': 'Url'}),       
+            'body': forms.Textarea(attrs={'class': 'form-control',
+                                          'placeholder': 'Description. 200-500 words.'}),
             'post_type': forms.Select(attrs={'class': 'form-control'}),
             'post_level': forms.Select(attrs={'class': 'form-control'}),
             'post_price': forms.Select(attrs={'class': 'form-control'}),           

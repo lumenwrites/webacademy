@@ -76,3 +76,6 @@ def email_subscribe(request):
         email_subscriber.save()
         
         return HttpResponseRedirect("/?notification=subscribed")
+
+
+    

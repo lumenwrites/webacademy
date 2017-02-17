@@ -31,7 +31,11 @@ $light-gray: #e7e7e7;
 	width: 580px;
 	width: 470px;
 	float: right;
-	margin-right: 27px;	
+	margin-right: 27px;
+
+	input {
+	    width: 230px;
+	}
     }
 
     input {
@@ -52,6 +56,13 @@ $light-gray: #e7e7e7;
     }
 }
 
+.alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+}
 
 /* Modals */
 

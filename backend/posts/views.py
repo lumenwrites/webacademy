@@ -3,7 +3,7 @@
 from django.views.generic import View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.db.models import Q, Count
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect, HttpResponse
@@ -149,6 +149,32 @@ class PostDetailView(DetailView):
         return context
     
 
+
+class PostUpdateView(UpdateView):
+    model = Post
+    form_class = PostForm
+    context_object_name = 'post'    
+    template_name = "posts/edit.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(PostUpdateView, self).get_context_data(**kwargs)
+        # context['form'] = PostForm()
+        categories = Category.objects.all()        
+        context['categories'] = categories
+
+        return context
+
+def post_delete(request, slug):
+    post = Post.objects.get(slug=slug)
+
+    # throw him out if he's not an author
+    if request.user != post.author:
+        return HttpResponseRedirect('/')        
+
+    post.delete()
+    return HttpResponseRedirect('/') 
+    
 
 
 class TagView(FilterMixin, ListView):

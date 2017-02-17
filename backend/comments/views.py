@@ -68,3 +68,20 @@ def comment_unupvote(request):
     user.comments_upvoted.remove(comment)
     user.save()
     return HttpResponse()
+
+
+
+# class CommentUpdateView(UpdateView):
+#     model = Post
+#     form_class = PostForm
+#     context_object_name = 'post'    
+#     template_name = "posts/edit.html"
+
+    
+#     def get_context_data(self, **kwargs):
+#         context = super(PostUpdateView, self).get_context_data(**kwargs)
+#         # context['form'] = PostForm()
+#         categories = Category.objects.all()        
+#         context['categories'] = categories
+
+#         return context

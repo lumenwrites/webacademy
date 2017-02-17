@@ -284,17 +284,21 @@ article .post-footer {
   float: right;
   margin-right: 27px;
 }
-/* line 37, ../sass/style.scss */
+/* line 36, ../sass/style.scss */
+.subscription-box .input-group input {
+  width: 230px;
+}
+/* line 41, ../sass/style.scss */
 .subscription-box input {
   height: 40px;
 }
-/* line 41, ../sass/style.scss */
+/* line 45, ../sass/style.scss */
 .subscription-box .btn {
   background: #da552f;
   color: white;
   height: 40px;
 }
-/* line 47, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 .subscription-box .close {
   position: relative;
   top: 19px;
@@ -302,27 +306,36 @@ article .post-footer {
   font-size: 32px;
 }
 
+/* line 59, ../sass/style.scss */
+.alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+
 /* Modals */
 /* Pagination */
-/* line 60, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 .pagination {
   width: 100%;
   margin: 10px 0;
   padding: 5px;
   text-align: center;
 }
-/* line 66, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 .pagination .fa {
   margin-top: 6px;
   color: #999;
 }
 
 /* Footer */
-/* line 74, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 footer {
   color: #999;
 }
-/* line 76, ../sass/style.scss */
+/* line 87, ../sass/style.scss */
 footer a {
   color: #999;
   font-weight: bold;
