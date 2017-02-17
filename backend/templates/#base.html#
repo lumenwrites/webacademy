@@ -26,8 +26,6 @@
   <!-- Main Page -->
   <div  class="container">
 
-
-
     {% include "elements/subscription-box.html" %}
 
     {% if tag %}

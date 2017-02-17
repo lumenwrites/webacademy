@@ -186,22 +186,19 @@ class TagView(FilterMixin, ListView):
         qs = super(TagView, self).get_queryset()
 
         # Filter by tag
-        tag = Tag.objects.get(slug=self.kwargs['tag'])
-
+        tag = Tag.objects.get(slug=self.kwargs['slug'])
         # qs = [p for p in qs if (tag in p.tags.all())]
-
         posts = []
         for post in qs:
-            for h in post.tags.all():
-                if h.slug==tag.slug:
+            for t in post.tags.all():
+                if t.slug==tag.slug:
                     posts.append(post)
         qs = posts
-
         return qs
         
     def get_context_data(self, **kwargs):
         context = super(TagView, self).get_context_data(**kwargs)
-        tag = Tag.objects.get(slug=self.kwargs['tagslug'])
+        tag = Tag.objects.get(slug=self.kwargs['slug'])
         context['tagtitle'] = tag.title
         context['tag'] = tag
         return context    

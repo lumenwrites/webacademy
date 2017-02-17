@@ -54,7 +54,7 @@
   <div class="post-footer">
     <span class="label label-default">{{post.category.title}}</span>
     {% for tag in post.tags.all %}
-    <span class="label label-default">{{tag.title}}</span>
+    <span class="label label-default"><a href="/{{tag.slug}}-tutorials/">{{tag.title}}</a></span>
     {% endfor %}
     <span class="label label-default">{{post.post_type | title}}</span>
     <span class="label label-default">{{post.post_level | title}}</span>      

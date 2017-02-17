@@ -341,51 +341,55 @@ article .post-footer {
   display: none;
 }
 /* line 20, ../sass/style.scss */
+.subscription-box .cta-description {
+  padding: 0 5px;
+}
+/* line 23, ../sass/style.scss */
 .subscription-box .panel {
   margin-bottom: 0;
 }
-/* line 23, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 .subscription-box .cta {
   padding: 10px;
   float: left;
   margin-right: 20px;
   font-weight: bold;
 }
-/* line 31, ../sass/style.scss */
+/* line 34, ../sass/style.scss */
 .subscription-box .email-form input {
   float: left;
 }
-/* line 34, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .subscription-box .email-form #id_email {
   width: calc(100% - 240px);
 }
 @media (max-width: 500px) {
-  /* line 34, ../sass/style.scss */
+  /* line 37, ../sass/style.scss */
   .subscription-box .email-form #id_email {
     width: 100%;
   }
 }
-/* line 40, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 .subscription-box .email-form #submit-email {
   width: 240px;
 }
 @media (max-width: 500px) {
-  /* line 40, ../sass/style.scss */
+  /* line 43, ../sass/style.scss */
   .subscription-box .email-form #submit-email {
     width: 100%;
   }
 }
-/* line 48, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 .subscription-box input {
   height: 40px;
 }
-/* line 52, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 .subscription-box .btn {
   background: #da552f;
   color: white;
   height: 40px;
 }
-/* line 58, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 .subscription-box .close {
   position: absolute;
   top: 19px;
@@ -393,14 +397,14 @@ article .post-footer {
   font-size: 32px;
 }
 @media (max-width: 740px) {
-  /* line 58, ../sass/style.scss */
+  /* line 61, ../sass/style.scss */
   .subscription-box .close {
     top: 10px;
     right: 30px;
   }
 }
 
-/* line 72, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 .alert {
   position: absolute;
   top: 0;
@@ -412,25 +416,25 @@ article .post-footer {
 
 /* Modals */
 /* Pagination */
-/* line 85, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 .pagination {
   width: 100%;
   margin: 10px 0;
   padding: 5px;
   text-align: center;
 }
-/* line 91, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 .pagination .fa {
   margin-top: 6px;
   color: #999;
 }
 
 /* Footer */
-/* line 99, ../sass/style.scss */
+/* line 102, ../sass/style.scss */
 footer {
   color: #999;
 }
-/* line 101, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 footer a {
   color: #999;
   font-weight: bold;
