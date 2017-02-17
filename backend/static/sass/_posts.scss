@@ -43,6 +43,14 @@ article {
     .label {
 	color: $dark-gray;
     }
+
+    .post-edit {
+	position: absolute;
+	right: 30px;
+	top: 30px;
+    }
+    
+
     .post-footer {
 	@extend p;
 	background: rgba(0,0,0,0.02);
@@ -53,6 +61,7 @@ article {
 
     }
 }
+
 
 
 

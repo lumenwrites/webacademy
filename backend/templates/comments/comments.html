@@ -41,7 +41,11 @@
     {% else %}
     <a data-toggle="modal" data-target="#login">reply</a>    
     {% endif %}
-
+    <!-- Edit -->
+    {% if comment.author == request.user %}        
+    <a href="/comment/{{post.slug}}/{{comment.id}}/edit?next={{request.path}}">edit</a>
+    {% endif %}        
+    
     {% if user.is_authenticated %}    
     <!-- Vote -->
     <a class="comment-upvote

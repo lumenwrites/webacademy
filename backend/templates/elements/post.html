@@ -31,8 +31,14 @@
 
   
   <!-- Post title -->
-  <div class="post-header vertical-center">
+  <div class="post-header vertical-center">    
     <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
+    {% if request.user == post.author %}
+    <a class="post-edit" href="{{post.get_absolute_url}}edit">
+      <i class="fa fa-pencil"></i>      
+    </a>
+    {% endif %}    
+    
   </div>
 
   <!-- Post body -->
@@ -55,6 +61,7 @@
     <span class="label label-default">{{post.post_price | title }}</span>
     <!-- <span class="label label-default">@rayalez</span> -->
     <span class="right">@{{post.author.username}}</span>
+    
   </div>
 </article>
 

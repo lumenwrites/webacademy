@@ -71,17 +71,41 @@ def comment_unupvote(request):
 
 
 
-# class CommentUpdateView(UpdateView):
-#     model = Post
-#     form_class = PostForm
-#     context_object_name = 'post'    
-#     template_name = "posts/edit.html"
+def comment_edit(request, post_slug, comment_id):
+    comment = Comment.objects.get(id = comment_id)
+    nextpage = request.GET.get('next', '/')
 
+    if request.method == 'POST':
+        form = CommentForm(request.POST,instance=comment)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.save()
+            return HttpResponseRedirect("/post/"+post_slug+"/")
+    else:
+        form = CommentForm(instance=comment)
     
-#     def get_context_data(self, **kwargs):
-#         context = super(PostUpdateView, self).get_context_data(**kwargs)
-#         # context['form'] = PostForm()
-#         categories = Category.objects.all()        
-#         context['categories'] = categories
+    return render(request, 'comments/edit.html', {
+        'comment':comment,
+        'post_slug':post_slug,        
+        'form':form,
+        'nextpage':nextpage
+    })
+    
+    # throw him out if he's not an author
+    if request.user != comment.author:
+        return HttpResponseRedirect('/')        
+    return HttpResponseRedirect('/') # to video list
 
-#         return context
+
+def comment_delete(request, post_slug, comment_id):
+    comment = Comment.objects.get(id = comment_id)
+
+    # throw him out if he's not an author
+    if request.user != comment.author:
+        return HttpResponseRedirect('/')        
+
+    comment.delete()
+    
+    return HttpResponseRedirect("/post/"+post_slug+"/")
+
+

@@ -202,7 +202,13 @@ article .voting-buttons .upvoted {
 article .label {
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 46, ../sass/_posts.scss */
+/* line 47, ../sass/_posts.scss */
+article .post-edit {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+/* line 54, ../sass/_posts.scss */
 article .post-footer {
   background: rgba(0, 0, 0, 0.02);
   padding: 7px 10px 10px 10px;
@@ -211,22 +217,22 @@ article .post-footer {
   border-top: 1px solid #e8e8e8;
 }
 
-/* line 59, ../sass/_posts.scss */
+/* line 68, ../sass/_posts.scss */
 .tag-description {
   margin-top: 20px;
 }
-/* line 61, ../sass/_posts.scss */
+/* line 70, ../sass/_posts.scss */
 .tag-description .panel {
   padding: 20px;
   margin-bottom: 0;
 }
-/* line 65, ../sass/_posts.scss */
+/* line 74, ../sass/_posts.scss */
 .tag-description .panel h1 {
   font-weight: bold;
   font-size: 20px;
   margin-top: 0;
 }
-/* line 70, ../sass/_posts.scss */
+/* line 79, ../sass/_posts.scss */
 .tag-description .panel h2 {
   font-weight: normal;
   font-size: 18px;
@@ -234,29 +240,29 @@ article .post-footer {
 }
 
 /* Post detail */
-/* line 81, ../sass/_posts.scss */
+/* line 90, ../sass/_posts.scss */
 .comment {
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04);
   min-height: 0;
 }
-/* line 84, ../sass/_posts.scss */
+/* line 93, ../sass/_posts.scss */
 .comment .footer {
   float: right;
 }
-/* line 86, ../sass/_posts.scss */
+/* line 95, ../sass/_posts.scss */
 .comment .footer a {
   cursor: pointer;
 }
-/* line 89, ../sass/_posts.scss */
+/* line 98, ../sass/_posts.scss */
 .comment .footer .score {
   font-weight: bold;
 }
-/* line 93, ../sass/_posts.scss */
+/* line 102, ../sass/_posts.scss */
 .comment .footer .comment-upvoted {
   color: #da552f;
 }
 
-/* line 100, ../sass/_posts.scss */
+/* line 109, ../sass/_posts.scss */
 .comment .comment {
   margin-right: -20.5px;
 }
@@ -313,29 +319,30 @@ article .post-footer {
   left: 0;
   width: 100%;
   display: none;
+  padding: 20px;
 }
 
 /* Modals */
 /* Pagination */
-/* line 71, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 .pagination {
   width: 100%;
   margin: 10px 0;
   padding: 5px;
   text-align: center;
 }
-/* line 77, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .pagination .fa {
   margin-top: 6px;
   color: #999;
 }
 
 /* Footer */
-/* line 85, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 footer {
   color: #999;
 }
-/* line 87, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 footer a {
   color: #999;
   font-weight: bold;
