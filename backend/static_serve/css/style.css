@@ -351,36 +351,49 @@ article .post-footer {
   margin-right: 20px;
   font-weight: bold;
 }
-/* line 30, ../sass/style.scss */
-.subscription-box .input-group {
-  width: 580px;
-  width: 470px;
-  float: right;
-  margin-right: 27px;
+/* line 31, ../sass/style.scss */
+.subscription-box .email-form input {
+  float: left;
 }
-/* line 36, ../sass/style.scss */
-.subscription-box .input-group input {
-  width: 230px;
+/* line 34, ../sass/style.scss */
+.subscription-box .email-form #id_email {
+  width: calc(100% - 240px);
 }
-/* line 41, ../sass/style.scss */
+@media (max-width: 500px) {
+  /* line 34, ../sass/style.scss */
+  .subscription-box .email-form #id_email {
+    width: 100%;
+  }
+}
+/* line 40, ../sass/style.scss */
+.subscription-box .email-form #submit-email {
+  width: 240px;
+}
+@media (max-width: 500px) {
+  /* line 40, ../sass/style.scss */
+  .subscription-box .email-form #submit-email {
+    width: 100%;
+  }
+}
+/* line 48, ../sass/style.scss */
 .subscription-box input {
   height: 40px;
 }
-/* line 45, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 .subscription-box .btn {
   background: #da552f;
   color: white;
   height: 40px;
 }
-/* line 51, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
 .subscription-box .close {
-  position: relative;
+  position: absolute;
   top: 19px;
-  right: 15px;
+  right: 22px;
   font-size: 32px;
 }
 
-/* line 59, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 .alert {
   position: absolute;
   top: 0;
@@ -392,25 +405,25 @@ article .post-footer {
 
 /* Modals */
 /* Pagination */
-/* line 72, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 .pagination {
   width: 100%;
   margin: 10px 0;
   padding: 5px;
   text-align: center;
 }
-/* line 78, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 .pagination .fa {
   margin-top: 6px;
   color: #999;
 }
 
 /* Footer */
-/* line 86, ../sass/style.scss */
+/* line 93, ../sass/style.scss */
 footer {
   color: #999;
 }
-/* line 88, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 footer a {
   color: #999;
   font-weight: bold;

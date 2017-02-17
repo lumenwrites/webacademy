@@ -27,17 +27,24 @@ $light-gray: #e7e7e7;
 	font-weight: bold;	
     }
 
-    .input-group {
-	width: 580px;
-	width: 470px;
-	float: right;
-	margin-right: 27px;
-
+    .email-form {
 	input {
-	    width: 230px;
+	    float:left;
 	}
+	#id_email {
+	    width: calc(100% - 240px);
+	    @media  (max-width: 500px) {
+		width: 100%;
+	    }
+	}
+	#submit-email {
+	    width:240px;
+	    @media  (max-width: 500px) {
+		width: 100%;
+	    }
+	    
+	}	
     }
-
     input {
 	height: 40px;
     }
@@ -49,9 +56,9 @@ $light-gray: #e7e7e7;
     }
 
     .close {
-	position: relative;
+	position: absolute;
 	top: 19px;
-	right: 15px;
+	right: 22px;
 	font-size: 32px;
     }
 }
