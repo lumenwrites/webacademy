@@ -1,7 +1,7 @@
   <header>
     <div class="container">
       <div class="row">      
-	<div class="col-xs-8">
+	<div class="col-xs-9 search">
 	  <!-- Logo -->
 	  <a href="/" class="logo">
 	      WA
@@ -20,14 +20,12 @@
 	  </form>
 	</div>
 	<!-- Menu -->
-	<div class="col-xs-4">
-	  <ul class="nav navbar-nav right">
+	<div class="col-xs-3 main-menu">
+	  <div class="right">
 	    {% if user.is_authenticated %}
-            <li>
-	      <a data-toggle="modal" data-target="#submit">
-		Submit
-	      </a>
-	    </li>
+	    <a data-toggle="modal" data-target="#submit" class="btn btn-default">
+	      <i class="fa fa-plus"></i>			      
+	    </a>
 	    <!-- 
             <li>
 	      <a data-toggle="modal" data-target="#submit">
@@ -43,26 +41,21 @@
 	    </li>
 	     -->
 	    <!-- Logout -->
-            <li>
-	      <a href="/logout">
-		<i class="fa fa-sign-out"></i>		
-	      </a>
-	    </li>
-	    	    
+	    <a href="/logout" class="btn btn-default">
+	      <i class="fa fa-sign-out"></i>		
+	    </a>
 
 	    {% else %}
-            <li>
-	      <a data-toggle="modal" data-target="#login">
-		Submit
-	      </a>
-	    </li>	    
-            <li>
-	      <a data-toggle="modal" data-target="#login">
-		Login
-	      </a>
-	    </li>
+	    <a data-toggle="modal" data-target="#login" class="btn btn-default">
+	      <!-- Submit -->
+	      <i class="fa fa-plus"></i>			      
+	    </a>
+	    <a data-toggle="modal" data-target="#login" class="btn btn-default">
+	      <!-- Login -->
+	      <i class="fa fa-sign-in"></i>	      
+	    </a>
 	    {% endif %}	    	    
-	  </ul>	  
+	  </div>	  
 	</div>
       </div>
 
