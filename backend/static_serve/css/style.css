@@ -233,50 +233,51 @@ article {
   border: 1px solid rgba(0, 0, 0, 0.09);
   margin-top: 20px;
   min-height: 130px;
+  position: relative;
 }
-/* line 10, ../sass/_posts.scss */
+/* line 11, ../sass/_posts.scss */
 article h2 {
   margin-top: 0;
   font-size: 22px;
   font-weight: bold;
 }
-/* line 16, ../sass/_posts.scss */
+/* line 17, ../sass/_posts.scss */
 article p, article .post-footer {
   font-size: 14px;
   color: #999;
 }
-/* line 22, ../sass/_posts.scss */
+/* line 23, ../sass/_posts.scss */
 article .voting-buttons {
   float: left;
   margin-right: 20px;
 }
-/* line 25, ../sass/_posts.scss */
+/* line 26, ../sass/_posts.scss */
 article .voting-buttons .btn {
   margin-bottom: 5px;
   width: 50px;
   padding: 5px 0;
 }
-/* line 30, ../sass/_posts.scss */
+/* line 31, ../sass/_posts.scss */
 article .voting-buttons .btn:hover {
   background: #e7e7e7;
 }
-/* line 35, ../sass/_posts.scss */
+/* line 36, ../sass/_posts.scss */
 article .voting-buttons .upvoted {
   background: #da552f;
   color: white;
   border: none;
 }
-/* line 43, ../sass/_posts.scss */
+/* line 44, ../sass/_posts.scss */
 article .label {
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 47, ../sass/_posts.scss */
+/* line 48, ../sass/_posts.scss */
 article .post-edit {
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 20px;
+  top: 20px;
 }
-/* line 54, ../sass/_posts.scss */
+/* line 55, ../sass/_posts.scss */
 article .post-footer {
   background: rgba(0, 0, 0, 0.02);
   padding: 7px 10px 10px 10px;
@@ -285,22 +286,22 @@ article .post-footer {
   border-top: 1px solid #e8e8e8;
 }
 
-/* line 68, ../sass/_posts.scss */
+/* line 69, ../sass/_posts.scss */
 .tag-description {
   margin-top: 20px;
 }
-/* line 70, ../sass/_posts.scss */
+/* line 71, ../sass/_posts.scss */
 .tag-description .panel {
   padding: 20px;
   margin-bottom: 0;
 }
-/* line 74, ../sass/_posts.scss */
+/* line 75, ../sass/_posts.scss */
 .tag-description .panel h1 {
   font-weight: bold;
   font-size: 20px;
   margin-top: 0;
 }
-/* line 79, ../sass/_posts.scss */
+/* line 80, ../sass/_posts.scss */
 .tag-description .panel h2 {
   font-weight: normal;
   font-size: 18px;
@@ -308,29 +309,29 @@ article .post-footer {
 }
 
 /* Post detail */
-/* line 90, ../sass/_posts.scss */
+/* line 91, ../sass/_posts.scss */
 .comment {
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04);
   min-height: 0;
 }
-/* line 93, ../sass/_posts.scss */
+/* line 94, ../sass/_posts.scss */
 .comment .footer {
   float: right;
 }
-/* line 95, ../sass/_posts.scss */
+/* line 96, ../sass/_posts.scss */
 .comment .footer a {
   cursor: pointer;
 }
-/* line 98, ../sass/_posts.scss */
+/* line 99, ../sass/_posts.scss */
 .comment .footer .score {
   font-weight: bold;
 }
-/* line 102, ../sass/_posts.scss */
+/* line 103, ../sass/_posts.scss */
 .comment .footer .comment-upvoted {
   color: #da552f;
 }
 
-/* line 109, ../sass/_posts.scss */
+/* line 110, ../sass/_posts.scss */
 .comment .comment {
   margin-right: -20.5px;
 }
