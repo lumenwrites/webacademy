@@ -149,6 +149,55 @@ class PostDetailView(DetailView):
         return context
     
 
+def post_edit(request, slug):
+    post = Post.objects.get(slug=slug)
+    # throw him out if he's not an author
+    if request.user != post.author and not request.user.is_staff:
+        return HttpResponseRedirect('/')        
+
+    if request.method == 'POST':
+        form = PostForm(request.POST,instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()                
+
+            # Replace tags
+            tags = request.POST.get('tags')
+            post.tags.set([])
+            if tags:
+                tags = tags.split(",")
+                for tag in tags:
+                    title = tag.strip()
+                    slug = slugify(title)
+                    # Get tag by slug. Create tag if it doesn't exist.
+                    try: 
+                        tag = Tag.objects.get(slug=slug)
+                    except:
+                        tag = Tag.objects.create(title=tag)
+                    post.tags.add(tag)
+
+            # Set category
+            category = request.POST.get('post_category')
+            if category:
+                category = Category.objects.get(slug=category)
+                post.category = category
+            post.save()
+
+            
+            return HttpResponseRedirect('/post/'+post.slug+'/')
+    else:
+        form = PostForm(instance=post)
+        post_tags = [tag.title for tag in post.tags.all()]
+        post_tags = ",".join(post_tags)
+        # form.fields["tags"] = []
+
+    return render(request, 'posts/edit.html', {
+        'post':post,
+        'form':form,
+        'post_tags':post_tags,
+        'categories': Category.objects.all(),
+    })
+    
 
 class PostUpdateView(UpdateView):
     model = Post
@@ -156,10 +205,34 @@ class PostUpdateView(UpdateView):
     context_object_name = 'post'    
     template_name = "posts/edit.html"
 
+    # def form_valid(self,form):
+    #     clean = form.cleaned_data
+        
+    #     # Add tags
+    #     tags = request.POST.get('tags')
+    #     if tags:
+    #         tags = tags.split(",")
+    #         for tag in tags:
+    #             title = tag.strip()
+    #             slug = slugify(title)
+    #             # Get tag by slug. Create tag if it doesn't exist.
+    #             try: 
+    #                 tag = Tag.objects.get(slug=slug)
+    #             except:
+    #                 tag = Tag.objects.create(title=tag)
+    #             post.tags.add(tag)
+
+    #     # Add category
+    #     category = request.POST.get('post_category')
+    #     if category:
+    #         category = Category.objects.get(slug=category)
+    #         post.category = category
+    #     post.save()
+
     
     def get_context_data(self, **kwargs):
         context = super(PostUpdateView, self).get_context_data(**kwargs)
-        # context['form'] = PostForm()
+        context['submitform'] = PostForm(instance=self.object)
         categories = Category.objects.all()        
         context['categories'] = categories
 

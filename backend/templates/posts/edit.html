@@ -9,7 +9,7 @@
     <article>
       <h2> Edit Post </h2>
 
-      {{submitform.errors}}
+      {{form.errors}}
 
       <!-- Submit Form -->
       <form class="form-horizontal"
@@ -40,7 +40,8 @@
 	    <!-- Url -->
             <div class="col-lg-12">
               <input type="text" class="form-control"
-		     name="tags" placeholder="Tags (HTML, Python, Django)">
+		     name="tags" placeholder="Tags (HTML, Python, Django)"
+		     value="{{post_tags}}">
             </div>
           </div>
 
@@ -52,17 +53,19 @@
             <div class="col-lg-3">
 	      <select name="post_category" class="form-control">
 		<option value="">Category</option>
-		<option value="backend">Backend</option>
+		{% for category in categories %}
+		<option value="{{category.slug}}">{{category.title}}</option>
+		{% endfor %}
 	      </select>
 	    </div>
             <div class="col-lg-3">
-	      {{submitform.post_type}}		
+	      {{form.post_type}}		
 	    </div>
             <div class="col-lg-3">
-	      {{submitform.post_level}}				
+	      {{form.post_level}}				
 	    </div>
             <div class="col-lg-3">
-	      {{submitform.post_price}}				
+	      {{form.post_price}}				
 	    </div>
 	    
 	  </div>
