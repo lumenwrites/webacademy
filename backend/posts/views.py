@@ -14,6 +14,7 @@ from comments.utils import get_comment_list
 
 from .models import Post
 from .forms import PostForm
+from core.utils import rank_hot
 from tags.models import Tag
 from categories.models import Category
 from comments.models import Comment
@@ -63,7 +64,8 @@ class FilterMixin(object):
         #     qs = qs.order_by('-pub_date')
         # else:
         #     qs = rank_hot(qs)
-
+        qs = qs.order_by('-score', '-pub_date')
+        
         return qs
 
     def get_context_data(self, **kwargs):
