@@ -57,7 +57,7 @@
     <span class="label label-default"><a href="/{{tag.slug}}-tutorials/">{{tag.title}}</a></span>
     {% endfor %}
     <span class="label label-default">{{post.post_type | title}}</span>
-    <span class="label label-default">{{post.post_level | title}}</span>      
+    <span class="label label-default">{% if post.post_level == "all" %}Level: All{% else %}{{post.post_level | title}}{% endif %}</span> 
     <span class="label label-default">{{post.post_price | title }}</span>
     <!-- <span class="label label-default">@rayalez</span> -->
     <span class="right">@{{post.author.username}}</span>
