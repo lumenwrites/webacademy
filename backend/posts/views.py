@@ -51,7 +51,7 @@ class FilterMixin(object):
                            Q(body__icontains=query) |
                            Q(author__username__icontains=query) |
                            Q(tags__title__icontains=query))                    
-
+            qs = qs.distinct()
 
 
 
