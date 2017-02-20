@@ -5,10 +5,6 @@ from .views import PostDetailView, post_create, post_edit, post_delete
 from .views import upvote, unupvote
 
 urlpatterns = [
-    url(r'^$', BrowseView.as_view()),
-    url(r'^tag/(?P<slug>[^\.]+)/$', TagView.as_view()),
-    url(r'^(?P<slug>[^\.]+)-tutorials/$', TagView.as_view()),    
-
     # url(r'^post/(?P<slug>[^\.]+)/edit$', PostUpdateView.as_view()),
     url(r'^post/(?P<slug>[^\.]+)/edit$', post_edit),    
     url(r'^post/(?P<slug>[^\.]+)/delete$', post_delete),
@@ -18,5 +14,9 @@ urlpatterns = [
 
     url(r'^upvote/$', upvote),
     url(r'^unupvote/$', unupvote),
+
+    url(r'^$', BrowseView.as_view()),
+    url(r'^tag/(?P<slug>[^\.]+)/$', TagView.as_view()),
+    url(r'^(?P<slug>[^\.]+)-tutorials/$', TagView.as_view()),    
     
 ]
