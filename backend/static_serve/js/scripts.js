@@ -34,6 +34,26 @@ $(document).ready(function() {
 	source: [
             "Django",
             "React",
+	    "HTML",
+	    "CSS",
+	    "jQuery",
+	    "Bootstrap",
+	    "Foundation",
+	    "Django",
+	    "Ruby",
+	    "Node",
+	    "Express",
+	    "Postgres",
+	    "Redis",
+	    "React",
+	    "Angular",
+	    "Ember",
+	    "Docker",
+	    "Nginx",
+	    "Emacs",
+	    "Git",
+	    "JavaScript",
+	    "Python"
 	]
     });
     $('#searchbar').typeahead()
